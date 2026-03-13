@@ -8,17 +8,23 @@ When asked to generate a post (e.g. "generate today's post", "run the agent", "c
 
 ## Workflow
 
+### Step 0 — Check yesterday's performance
+Ask Titus: "How did yesterday's post perform?" (likes, comments, shares, impressions, or any qualitative signal).
+Use the answer to inform tone, angle, or topic emphasis for today's post. If Titus says to skip or has no data, proceed.
+
 ### Step 1 — Fetch newsletter metadata
 Use the Civic Gmail MCP tool to search for newsletters from the past 24 hours.
 Query: `(unsubscribe OR "view in browser") newer_than:1d`
 Fetch up to 25 results.
 
 ### Step 2 — Select the best 6
-Pick the 6 most relevant to: AI, software agents, startups, founders, tech economics.
+Pick the 6 most relevant to: AI agents, agentic workflows, AI infrastructure, startups, founders, tech economics.
 
-Prioritise: The Neuron, Every, Genuine Impact, Bankless, The Defiant, The Block, Essentialist CEO, Milk Road, Prof G, Substack tech/AI writers.
+Prioritise: The Neuron, Every, Genuine Impact, Essentialist CEO, Prof G, Substack tech/AI writers.
 
 Skip: wire services (AP, Reuters), e-commerce promotions, mining, movie services, unrelated marketing.
+
+**Do NOT select crypto/blockchain-focused newsletters** (Bankless, The Defiant, The Block, Milk Road, etc.) as the primary source for a post. Crypto may appear as a secondary data point if directly relevant to AI agents or agentic infrastructure, but the post must be about AI agents — not crypto markets, DeFi, or tokenomics.
 
 ### Step 3 — Fetch full content
 Use the Civic Gmail batch content tool to get the full text of the selected 6 message IDs.
