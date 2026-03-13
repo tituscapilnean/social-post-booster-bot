@@ -80,8 +80,16 @@ Good closings:
 
 ## Format Rules
 
+**LinkedIn**
 - Single scroll post — no threads, no numbered lists, no bullet points
 - 200–350 words
 - Weave 2+ newsletter topics into one cohesive narrative
 - Hit 1–2 communication pillars (see `config/pillars.md`)
 - Output ONLY the post text — no intro, no commentary, no hashtags
+- Always generate 3 hook variants; write the full post using variant 1 as default
+
+**X**
+- 1 standalone tweet, max 280 characters
+- Same voice — lead with the sharpest hook, end with implication or reply-bait question
+- No threads
+- Output ONLY the tweet text — no hashtags, no commentary
