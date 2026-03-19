@@ -34,6 +34,24 @@ When asked to generate a post (e.g. "generate today's post", "run the agent", "c
 
 ---
 
+## Critical Style Rules (read before generating)
+
+These rules override intuition. Violating them is the most common failure mode.
+
+**Openings — never start with:**
+- "I", "Today", "Here's", "Let me", "In this post"
+- Background or context — always start with tension, paradox, or contradiction
+
+**No negative-then-positive constructions:**
+- ❌ "Not the deep specialist. The orchestrator wins."
+- ✅ "The orchestrator wins. Deep specialization in one vertical just got compressed into a prompt."
+
+**Voice:** Op-ed, not news anchor. Avoid engineered hooks and choppy one-liner mic drops. The post should feel like an analyst who runs these systems — not a content creator optimizing for virality.
+
+**Output format:** Post text only — no intro sentences, no commentary, no hashtags, no "Here's the LinkedIn post:".
+
+---
+
 ## Workflow
 
 ### Step 0 — Check yesterday's performance
@@ -83,12 +101,38 @@ Write two platform-specific versions following the style guide in `config/style.
 - Lead with the sharpest hook variant
 - End with a forward-looking implication or a question that earns a reply
 
+### Step 5.5 — Evaluate the post
+
+Before saving, score the draft on three dimensions (1–5 each). Be honest — a 3 is acceptable, a 2 means revise.
+
+**Relevance (1–5):** Does the post clearly connect to AI agents, agentic workflows, or the agentic economy? Is it grounded in at least 2 concrete signals from today's newsletters?
+- 5 = tight, specific, clearly in Titus's lane
+- 3 = on-topic but generic
+- 1 = could have been written by anyone about anything
+
+**Hotness (1–5):** Is this a conversation happening right now? Does it connect to recent deployments, announcements, or emerging tensions in the field?
+- 5 = this week's news, feels urgent
+- 3 = evergreen but timely enough
+- 1 = could have been published 6 months ago
+
+**Engagement-worthiness (1–5):** Will the hook make a founder or builder stop scrolling? Does the implication provoke a reply, a repost, or a "yes, exactly"?
+- 5 = punchy hook + surprising insight + forward implication that earns a response
+- 3 = solid but safe
+- 1 = no tension, no reason to share
+
+**Threshold:** If any score is ≤ 2, revise the post before proceeding. Show the scores in the output.
+
 ### Step 6 — Save the draft
 Use the Write tool to save the post to `drafts/YYYY-MM-DD.md` (today's date).
 
 File format:
 ```
 # Social Post Draft — YYYY-MM-DD
+
+## Evaluation
+- Relevance: X/5
+- Hotness: X/5
+- Engagement-worthiness: X/5
 
 ## LinkedIn
 
