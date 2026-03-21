@@ -169,3 +169,7 @@ X: [recommended window in PT]
 ## Output
 
 After saving, show the full draft in the conversation so Titus can review it before committing.
+
+### One-click posting
+- **X:** Generate a `https://twitter.com/intent/tweet?text=URL_ENCODED_TEXT` link so Titus can post with one click.
+- **LinkedIn:** LinkedIn's share URL truncates long text, so copy the final LinkedIn post to the system clipboard using `pbcopy` instead. Titus will paste it into a new LinkedIn post manually.
