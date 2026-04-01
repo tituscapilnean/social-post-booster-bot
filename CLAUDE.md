@@ -84,6 +84,24 @@ Read the competitor list from: `config/competitors.md`
 
 You may still draw from those newsletters for unrelated insights — just don't give those companies a platform.
 
+### Step 4.5 — Confirm topic & search X for topical posts
+
+After reading the newsletters and filtering competitors, propose the main topic/angle to Titus. Include:
+- The proposed narrative angle (1–2 sentences)
+- Which newsletters are feeding it
+- Which pillar(s) it hits
+
+**Wait for Titus to confirm or redirect before proceeding.**
+
+Once the topic is confirmed, use the Civic Twitter MCP tool (`mcp__civic__twitter-search_tweets`) to search X for topical posts from the past 24 hours related to the confirmed angle. Use 2–3 targeted search queries (e.g. key terms, named technologies, people involved).
+
+Use the X search results to:
+- Sharpen the hook with language/framing the audience is already using
+- Find data points, quotes, or takes that reinforce or contrast the narrative
+- Gauge what sub-angle is getting the most engagement right now
+
+Do NOT build the post around a single tweet. The newsletters remain the primary source; X posts add texture and timeliness.
+
 ### Step 5 — Generate the post
 Write two platform-specific versions following the style guide in `config/style.md`.
 
