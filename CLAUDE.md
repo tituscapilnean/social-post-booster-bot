@@ -54,19 +54,32 @@ These rules override intuition. Violating them is the most common failure mode.
 
 ## Workflow
 
-### Step 0 — Check yesterday's performance
+### Step 1 — Verify posting tokens
+Before starting the workflow, test the X and LinkedIn auth tokens by running:
+```
+source .env && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $X_USER_ACCESS_TOKEN" "https://api.x.com/2/users/me"
+source .env && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" "https://api.linkedin.com/v2/userinfo"
+```
+- **200** = token is valid, proceed.
+- **401** or other error = token expired. Ask Titus to run the relevant auth script:
+  - X: `! ./scripts/x-auth.sh`
+  - LinkedIn: `! ./scripts/linkedin-auth.sh`
+
+Do not proceed with the workflow until both tokens return 200.
+
+### Step 2 — Check yesterday's performance
 Ask Titus: "How did yesterday's post perform?" Request:
 - X: views, likes, reposts
 - LinkedIn: impressions, reactions, comments, reposts, and if available — top job title, top industry, top location
 
 Use the answer to inform tone, angle, or topic emphasis for today's post. If the audience breakdown shows a skew (e.g. BD leaders vs. founders), lean into the angle that resonates with that cohort. If Titus says to skip or has no data, proceed.
 
-### Step 1 — Fetch newsletter metadata
+### Step 3 — Fetch newsletter metadata
 Use the Civic Gmail MCP tool to search for newsletters from the past 24 hours.
 Query: `(unsubscribe OR "view in browser") newer_than:1d`
 Fetch up to 25 results.
 
-### Step 2 — Select the best 6
+### Step 4 — Select the best 6
 Pick the 6 most relevant to: AI agents, agentic workflows, AI infrastructure, startups, founders, tech economics.
 
 Prioritise: The Neuron, Every, Genuine Impact, Essentialist CEO, Prof G, Substack tech/AI writers.
@@ -75,16 +88,16 @@ Skip: wire services (AP, Reuters), e-commerce promotions, mining, movie services
 
 **Do NOT select crypto/blockchain-focused newsletters** (Bankless, The Defiant, The Block, Milk Road, etc.) as the primary source for a post. Crypto may appear as a secondary data point if directly relevant to AI agents or agentic infrastructure, but the post must be about AI agents — not crypto markets, DeFi, or tokenomics.
 
-### Step 3 — Fetch full content
+### Step 5 — Fetch full content
 Use the Civic Gmail batch content tool to get the full text of the selected 6 message IDs.
 
-### Step 4 — Filter competitors
+### Step 6 — Filter competitors
 Do NOT build the post around content that primarily promotes Civic competitors.
 Read the competitor list from: `config/competitors.md`
 
 You may still draw from those newsletters for unrelated insights — just don't give those companies a platform.
 
-### Step 4.5 — Confirm topic & search X for topical posts
+### Step 7 — Confirm topic & search X for topical posts
 
 After reading the newsletters and filtering competitors, propose the main topic/angle to Titus. Include:
 - The proposed narrative angle (1–2 sentences)
@@ -93,7 +106,7 @@ After reading the newsletters and filtering competitors, propose the main topic/
 
 **Wait for Titus to confirm or redirect before proceeding.**
 
-Once the topic is confirmed, use the Civic Twitter MCP tool (`mcp__civic__twitter-search_tweets`) to search X for topical posts from the past 24 hours related to the confirmed angle. Use 2–3 targeted search queries (e.g. key terms, named technologies, people involved).
+Once the topic is confirmed, search X for topical posts from the past 24 hours related to the confirmed angle using `WebSearch` with `site:x.com` queries. Use 2–3 targeted search queries (e.g. key terms, named technologies, people involved).
 
 Use the X search results to:
 - Sharpen the hook with language/framing the audience is already using
@@ -102,7 +115,7 @@ Use the X search results to:
 
 Do NOT build the post around a single tweet. The newsletters remain the primary source; X posts add texture and timeliness.
 
-### Step 5 — Generate the post
+### Step 8 — Generate the post
 Write two platform-specific versions following the style guide in `config/style.md`.
 
 **Both versions must:**
@@ -119,7 +132,7 @@ Write two platform-specific versions following the style guide in `config/style.
 - Lead with the sharpest hook variant
 - End with a forward-looking implication or a question that earns a reply
 
-### Step 5.5 — Evaluate the post
+### Step 9 — Evaluate the post
 
 Before saving, score the draft on three dimensions (1–5 each). Be honest — a 3 is acceptable, a 2 means revise.
 
@@ -140,7 +153,7 @@ Before saving, score the draft on three dimensions (1–5 each). Be honest — a
 
 **Threshold:** If any score is ≤ 2, revise the post before proceeding. Show the scores in the output.
 
-### Step 6 — Save the draft
+### Step 10 — Save the draft
 Use the Write tool to save the post to `drafts/YYYY-MM-DD.md` (today's date).
 
 File format:
