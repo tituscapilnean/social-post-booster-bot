@@ -57,8 +57,8 @@ These rules override intuition. Violating them is the most common failure mode.
 ### Step 1 — Verify posting tokens
 Before starting the workflow, test the X and LinkedIn auth tokens by running:
 ```
-source .env && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $X_USER_ACCESS_TOKEN" "https://api.x.com/2/users/me"
-source .env && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" "https://api.linkedin.com/v2/userinfo"
+source .env && source .tokens && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $X_USER_ACCESS_TOKEN" "https://api.x.com/2/users/me"
+source .env && source .tokens && curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" "https://api.linkedin.com/v2/userinfo"
 ```
 - **200** = token is valid, proceed.
 - **401** or other error = token expired. Ask Titus to run the relevant auth script:

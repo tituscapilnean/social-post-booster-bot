@@ -7,9 +7,10 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/../.env"
+source "$SCRIPT_DIR/../.tokens"
 
 if [[ -z "${X_USER_ACCESS_TOKEN:-}" ]]; then
-  echo "Error: X_USER_ACCESS_TOKEN is not set in .env (run ./scripts/x-auth.sh first)" >&2
+  echo "Error: X_USER_ACCESS_TOKEN is not set in .tokens (run ./scripts/x-auth.sh first)" >&2
   exit 1
 fi
 

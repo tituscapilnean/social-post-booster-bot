@@ -7,6 +7,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/../.env"
+source "$SCRIPT_DIR/../.tokens"
 
 for var in LINKEDIN_ACCESS_TOKEN LINKEDIN_PERSON_URN; do
   if [[ -z "${!var:-}" ]]; then
