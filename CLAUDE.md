@@ -201,6 +201,8 @@ X: [recommended window in PT]
 
 After saving, show the full draft in the conversation so Titus can review it before committing.
 
-### One-click posting
-- **X:** Generate a `https://twitter.com/intent/tweet?text=URL_ENCODED_TEXT` link so Titus can post with one click.
-- **LinkedIn:** LinkedIn's share URL truncates long text, so copy the final LinkedIn post to the system clipboard using `pbcopy` instead. Titus will paste it into a new LinkedIn post manually.
+### Posting via API
+Once Titus approves the draft, post directly via platform APIs:
+
+- **X:** Post via `curl` to `https://api.x.com/2/tweets` using the `$X_USER_ACCESS_TOKEN` from `.env` and `.tokens`. The Civic MCP tweet tool has a 280-char limit, so always use the API directly for longer posts.
+- **LinkedIn:** Post via `curl` to `https://api.linkedin.com/v2/ugcPosts` using the `$LINKEDIN_ACCESS_TOKEN`. The LinkedIn person URN is `urn:li:person:aqNMuRfSOs`. Set `lifecycleState` to `PUBLISHED`, `shareMediaCategory` to `NONE`, and visibility to `PUBLIC`.
