@@ -9,8 +9,14 @@ This is a **prompt-only repo** — no build system, no tests, no runtime. Everyt
 ```
 config/
   style.md        # Voice, structure, tone rules, platform-specific format (LinkedIn + X)
-  pillars.md      # 3 communication pillars — every post must hit 1–2
+  pillars.md      # 3 communication pillars — every post must hit 1-2
   competitors.md  # Blocked companies — never feature favorably in a post
+
+newsletter_list.md  # Pre-selected sender addresses — source of the Step 3 Gmail query
+newsletters/
+  {slug}.md         # One file per sender — latest issue, summarized. Frontmatter: newsletter, sender, subject, date, message_id
+
+ideabank.json       # Post ideas with used/unused tracking. Draw from unused ideas when relevant.
 
 drafts/
   YYYY-MM-DD.md  # One file per day, written by the agent after post generation
@@ -20,7 +26,11 @@ drafts/
   hooks/session-start.sh # Creates drafts/ dir in remote Claude Code sessions
 ```
 
-**MCP dependency:** The workflow requires the Civic MCP server (profile: `social-media-toolkit`) for Gmail search/fetch and Twitter post tools. Without it, Steps 1–3 and any posting steps cannot run.
+**MCP dependency:** The workflow requires the Civic MCP server (profile: `social-media-toolkit`) for Gmail search/fetch and Twitter post tools. Without it, Steps 1-3 and any posting steps cannot run.
+
+**MCP tool mapping:**
+- Step 3 metadata check: `mcp__civic__google-gmail-search_gmail_messages` (format: metadata)
+- Step 3 content update (new issues only): `mcp__civic__google-gmail-get_gmail_messages_content_batch`
 
 **No commands to run.** There is no `npm install`, no lint, no test suite. The only "execution" is Claude running the workflow below.
 
@@ -43,10 +53,10 @@ These rules override intuition. Violating them is the most common failure mode.
 - Background or context — always start with tension, paradox, or contradiction
 
 **No negative-then-positive constructions:**
-- ❌ "Not the deep specialist. The orchestrator wins."
-- ✅ "The orchestrator wins. Deep specialization in one vertical just got compressed into a prompt."
+- Bad: "Not the deep specialist. The orchestrator wins."
+- Good: "The orchestrator wins. Deep specialization in one vertical just got compressed into a prompt."
 
-**Voice:** Op-ed, not news anchor. Avoid engineered hooks and choppy one-liner mic drops. The post should feel like an analyst who runs these systems — not a content creator optimizing for virality.
+**Voice:** Op-ed, not news anchor. Avoid engineered hooks and choppy one-liner mic drops. The post should feel like an analyst who runs these systems -- not a content creator optimizing for virality.
 
 **Output format:** Post text only — no intro sentences, no commentary, no hashtags, no "Here's the LinkedIn post:".
 
@@ -74,22 +84,57 @@ Ask Titus: "How did yesterday's post perform?" Request:
 
 Use the answer to inform tone, angle, or topic emphasis for today's post. If the audience breakdown shows a skew (e.g. BD leaders vs. founders), lean into the angle that resonates with that cohort. If Titus says to skip or has no data, proceed.
 
-### Step 3 — Fetch newsletter metadata
-Use the Civic Gmail MCP tool to search for newsletters from the past 24 hours.
-Query: `(unsubscribe OR "view in browser") newer_than:1d`
-Fetch up to 25 results.
+### Step 3 — Update the newsletter cache
+Read all files in `newsletters/`. Each file has frontmatter with `sender`, `date`, and `message_id`.
 
-### Step 4 — Select the best 6
-Pick the 6 most relevant to: AI agents, agentic workflows, AI infrastructure, startups, founders, tech economics.
+Search Gmail **metadata only** (`format: metadata`) using the pre-selected sender addresses from `newsletter_list.md`:
+```
+from:(sender1 OR sender2 OR ...) newer_than:7d
+```
+Fetch up to 27 results.
 
-Prioritise: The Neuron, Every, Genuine Impact, Essentialist CEO, Prof G, Substack tech/AI writers.
+For each result: compare the Gmail message date to the `date` in the corresponding `newsletters/{slug}.md` file.
+- **Same message_id or older date** -> already cached, skip
+- **Newer date** -> fetch full content for that message, update the newsletter file
 
-Skip: wire services (AP, Reuters), e-commerce promotions, mining, movie services, unrelated marketing.
+Only fetch full content for senders with a genuinely newer issue. On most days this will be 0-8 fetches instead of 25+.
 
-**Do NOT select crypto/blockchain-focused newsletters** (Bankless, The Defiant, The Block, Milk Road, etc.) as the primary source for a post. Crypto may appear as a secondary data point if directly relevant to AI agents or agentic infrastructure, but the post must be about AI agents — not crypto markets, DeFi, or tokenomics.
+**Newsletter file format** (preserve when updating):
+```
+---
+newsletter: [Name]
+sender: [email]
+subject: [subject line]
+date: [YYYY-MM-DD]
+message_id: [id]
+---
 
-### Step 5 — Fetch full content
-Use the Civic Gmail batch content tool to get the full text of the selected 6 message IDs.
+[Summarized content — key insights, data points, AI/agentic angle]
+```
+
+When summarizing newsletter content:
+- Extract concrete data points, quotes, and named examples
+- Note which companies, products, or people are mentioned
+- Flag any competitor mentions (see `config/competitors.md`)
+- Keep summaries to 200-400 words — enough to write a post from without re-fetching
+
+### Step 4 — Build the content pool
+Read all `newsletters/` files. Then:
+
+1. **Check draft history** — scan `drafts/*.md` Sources sections from the last 7 days of drafts. Deprioritize (but don't exclude) those senders to avoid repetition.
+
+2. **Skip non-content** — skip any newsletter file where content is a welcome email, promotional stub, or has no usable AI/agentic signal.
+
+3. **Filter crypto** — Do NOT select crypto/blockchain-focused newsletters (Bankless, The Defiant, The Block, Milk Road, etc.) as the primary source. Crypto may appear as a secondary data point if directly relevant to AI agents.
+
+4. **Rank by relevance** — from the remaining files, pick the top 6 most relevant to: AI agents, agentic workflows, AI infrastructure, startups, founders, tech economics.
+
+5. **Check the idea bank** — read `ideabank.json`. If any unused ideas align with today's top newsletter signals, note them for Step 7. Ideas provide hooks and angles; newsletters provide the evidence and timeliness.
+
+### Step 5 — Fetch full content (if needed)
+If Step 3 already updated the cache with today's content, no additional fetches needed.
+
+If any of the top 6 newsletters have stale cache (older than 24 hours), fetch their latest full content using the Civic Gmail batch content tool and update the cache files.
 
 ### Step 6 — Filter competitors
 Do NOT build the post around content that primarily promotes Civic competitors.
@@ -100,13 +145,14 @@ You may still draw from those newsletters for unrelated insights — just don't 
 ### Step 7 — Confirm topic & search X for topical posts
 
 After reading the newsletters and filtering competitors, propose the main topic/angle to Titus. Include:
-- The proposed narrative angle (1–2 sentences)
+- The proposed narrative angle (1-2 sentences)
 - Which newsletters are feeding it
 - Which pillar(s) it hits
+- Whether an idea bank entry is being used (and which one)
 
 **Wait for Titus to confirm or redirect before proceeding.**
 
-Once the topic is confirmed, search X for topical posts from the past 24 hours related to the confirmed angle using `WebSearch` with `site:x.com` queries. Use 2–3 targeted search queries (e.g. key terms, named technologies, people involved).
+Once the topic is confirmed, search X for topical posts from the past 24 hours related to the confirmed angle using `WebSearch` with `site:x.com` queries. Use 2-3 targeted search queries (e.g. key terms, named technologies, people involved).
 
 Use the X search results to:
 - Sharpen the hook with language/framing the audience is already using
@@ -120,41 +166,46 @@ Write two platform-specific versions following the style guide in `config/style.
 
 **Both versions must:**
 - Weave signals from at least 2 newsletters into one narrative
-- Hit 1–2 of the communication pillars in `config/pillars.md`
+- Hit 1-2 of the communication pillars in `config/pillars.md`
 
 **LinkedIn version:**
-- 200–350 words, single scroll, no threads, no bullet points
+- 200-350 words, single scroll, no threads, no bullet points
 - Generate 3 hook variants for the opening line — Titus will pick one
-- Full 5-part structure: hook → situation → hidden system → misconception → implication
+- Full 5-part structure: hook -> situation -> hidden system -> misconception -> implication
 
 **X version:**
-- 1 standalone tweet, max 280 characters
+- Multi-line post, 400-600 characters
 - Lead with the sharpest hook variant
 - End with a forward-looking implication or a question that earns a reply
+- Tag companies with their @handles when mentioned
 
 ### Step 9 — Evaluate the post
 
-Before saving, score the draft on three dimensions (1–5 each). Be honest — a 3 is acceptable, a 2 means revise.
+Before saving, score the draft on three dimensions (1-5 each). Be honest — a 3 is acceptable, a 2 means revise.
 
-**Relevance (1–5):** Does the post clearly connect to AI agents, agentic workflows, or the agentic economy? Is it grounded in at least 2 concrete signals from today's newsletters?
+**Relevance (1-5):** Does the post clearly connect to AI agents, agentic workflows, or the agentic economy? Is it grounded in at least 2 concrete signals from today's newsletters?
 - 5 = tight, specific, clearly in Titus's lane
 - 3 = on-topic but generic
 - 1 = could have been written by anyone about anything
 
-**Hotness (1–5):** Is this a conversation happening right now? Does it connect to recent deployments, announcements, or emerging tensions in the field?
+**Hotness (1-5):** Is this a conversation happening right now? Does it connect to recent deployments, announcements, or emerging tensions in the field?
 - 5 = this week's news, feels urgent
 - 3 = evergreen but timely enough
 - 1 = could have been published 6 months ago
 
-**Engagement-worthiness (1–5):** Will the hook make a founder or builder stop scrolling? Does the implication provoke a reply, a repost, or a "yes, exactly"?
+**Engagement-worthiness (1-5):** Will the hook make a founder or builder stop scrolling? Does the implication provoke a reply, a repost, or a "yes, exactly"?
 - 5 = punchy hook + surprising insight + forward implication that earns a response
 - 3 = solid but safe
 - 1 = no tension, no reason to share
 
-**Threshold:** If any score is ≤ 2, revise the post before proceeding. Show the scores in the output.
+**Threshold:** If any score is <= 2, revise the post before proceeding. Show the scores in the output.
 
-### Step 10 — Save the draft
+### Step 10 — Save the draft & update idea bank
 Use the Write tool to save the post to `drafts/YYYY-MM-DD.md` (today's date).
+
+**Update `ideabank.json`:**
+- If an idea bank entry was used in today's post, mark it with `"used": true` and `"used_date": "YYYY-MM-DD"`
+- If today's newsletters surfaced new post-worthy angles that weren't used today, add them as new entries with `"used": false`
 
 File format:
 ```
@@ -179,7 +230,7 @@ File format:
 
 ## X
 
-[single tweet, max 280 characters]
+[multi-line post, 400-600 characters]
 
 ---
 

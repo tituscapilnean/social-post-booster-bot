@@ -1,0 +1,147 @@
+[
+  {
+    "rank": 1,
+    "hook": "Hot take: your AI agent is not productively working while you sleep.",
+    "thesis": "The idea of fully autonomous AI agents running unattended for long stretches is mostly hype. In practice, error rates compound, context drifts, and outputs degrade fast unless the work is tightly scoped and frequently reset.",
+    "angle": "Myth-busting, contrarian, operator perspective. Frame this as a reality check against popular AI automation narratives.",
+    "CTA": "Ask your audience: What's the longest unattended AI workflow you've actually seen work reliably in production?",
+    "used": false
+  },
+  {
+    "rank": 2,
+    "hook": "Counterintuitive AI lesson: more context can mean worse output.",
+    "thesis": "Long AI chats often reduce quality instead of improving it. The more a session keeps going, the more drift accumulates, which makes outputs less reliable over time.",
+    "angle": "Surprising practical insight. Emphasize that this goes against what most users intuitively expect.",
+    "CTA": "Ask: Have you found that resetting the chat gives you better results than continuing the same thread?",
+    "used": false
+  },
+  {
+    "rank": 3,
+    "hook": "Best AI workflow rule I've learned: one session, one task.",
+    "thesis": "AI performs best when each session is dedicated to one clearly bounded job. Once that task is done, starting fresh usually produces more consistent and accurate results than chaining many tasks together.",
+    "angle": "Tactical takeaway people can apply immediately. Simple, memorable, and actionable.",
+    "CTA": "Invite people to test it: Try breaking one long AI workflow into separate fresh sessions and compare the output.",
+    "used": false
+  },
+  {
+    "rank": 4,
+    "hook": "Never trust AI output you can't inspect.",
+    "thesis": "If you cannot verify, audit, or inspect the result, you should not rely on it. AI often sounds confident even when it is wrong, so trust has to be earned through visibility and validation.",
+    "angle": "Hard-earned skepticism from a builder's perspective. Strong principle with broad relevance.",
+    "CTA": "Ask: What checks or evals do you use before trusting AI-generated work?",
+    "used": true,
+    "used_date": "2026-04-08"
+  },
+  {
+    "rank": 5,
+    "hook": "AI helps experts more than novices.",
+    "thesis": "AI is a stronger amplifier of existing expertise than a substitute for expertise. People who already know what good looks like get outsized leverage because they can guide, evaluate, and correct the output.",
+    "angle": "Push back on the idea that AI fully levels the playing field. Make it thoughtful, not elitist.",
+    "CTA": "Ask: Has AI amplified your strengths more than it has helped cover your weaknesses?",
+    "used": false
+  },
+  {
+    "rank": 6,
+    "hook": "A lot of 'AI productivity' is just delayed rework.",
+    "thesis": "Many teams think AI is saving time when it is actually shifting effort into cleanup, debugging, and correction. The illusion of speed hides the cost of fixing weak output later.",
+    "angle": "Relatable operational truth. Useful for founders, managers, and teams evaluating ROI.",
+    "CTA": "Ask: How much of your AI time savings are real, and how much are just hidden cleanup?",
+    "used": false
+  },
+  {
+    "rank": 7,
+    "hook": "The best AI use cases are boringly specific.",
+    "thesis": "AI is most effective on narrow tasks with clear inputs, clear expected outputs, and expensive expertise requirements. The highest-value workflows today are usually not broad or magical -- they are tightly scoped and measurable.",
+    "angle": "Grounded implementation advice. Good for audiences tired of vague AI claims.",
+    "CTA": "Ask: What is the most narrowly scoped AI workflow that has actually delivered ROI for your team?",
+    "used": false
+  },
+  {
+    "rank": 8,
+    "hook": "In AI, data connectors may matter more than UI.",
+    "thesis": "A big part of AI value comes from getting the right data into context, not just from designing a slick interface. The tools that win may be the ones that make data accessible, usable, and connected.",
+    "angle": "Infrastructure and product strategy take. Smart and slightly under-discussed.",
+    "CTA": "Ask: Do you think the real moat in AI products is the model, the interface, or the data layer?",
+    "used": false
+  },
+  {
+    "rank": 9,
+    "hook": "AI may not kill SaaS, but it could kill seat-based pricing.",
+    "thesis": "As agents and automations do more work, pricing software per human seat makes less sense. Usage-based or outcome-based pricing is likely to become a better fit for AI-driven products.",
+    "angle": "Bold market prediction. Great for startup and product audiences.",
+    "CTA": "Ask: Which pricing model makes the most sense in an agent-driven world: seats, usage, or outcomes?",
+    "used": false
+  },
+  {
+    "rank": 10,
+    "hook": "The moat isn't the model. It's the orchestration.",
+    "thesis": "Competitive advantage in AI software may come less from model access and more from how tasks are routed, constrained, evaluated, and delegated. Keeping systems on track is where the real leverage lives.",
+    "angle": "Founder-grade strategy insight. Good for technical and product-savvy audiences.",
+    "CTA": "Ask: What matters more in your stack today: model quality or workflow orchestration?",
+    "used": false
+  },
+  {
+    "rank": 11,
+    "hook": "Marketing can't save a product experience that isn't there.",
+    "thesis": "If your website and story promise more than the product actually delivers, GTM gets stuck. Weak conversion data does not mean the market rejected the product if users never got the promised experience.",
+    "angle": "Blunt GTM truth. Strong fit for product marketing and startup audiences.",
+    "CTA": "Ask: Have you ever seen 'bad demand' that was really just a product-story mismatch?",
+    "used": false
+  },
+  {
+    "rank": 12,
+    "hook": "The market doesn't need more AI demos. It needs working systems.",
+    "thesis": "People are overloaded with flashy demos, agents, prompt guides, and AI theater. What actually matters is whether the workflow produces dependable outcomes in real use.",
+    "angle": "Anti-hype, pro-results. Broad resonance across builders and operators.",
+    "CTA": "Ask: What's one AI workflow you use that actually works consistently, not just in a demo?",
+    "used": false
+  },
+  {
+    "rank": 13,
+    "hook": "Good AI use case filter: expensive expertise, clear outcomes.",
+    "thesis": "AI is strongest where expert work is costly but success can still be clearly defined and checked. That is where productivity gains are real and quality can still be controlled.",
+    "angle": "Strategic filter for leaders deciding where to deploy AI first.",
+    "CTA": "Ask: Which high-expertise, easy-to-evaluate task in your business should be automated first?",
+    "used": false
+  },
+  {
+    "rank": 14,
+    "hook": "A lot of AI business models look different once inference pricing catches up.",
+    "thesis": "Current AI usage is still benefiting from heavily subsidized economics. As true inference costs become more visible, product design, pricing, and adoption patterns may shift dramatically.",
+    "angle": "Economic warning with a forward-looking market lens.",
+    "CTA": "Ask: What happens to today's AI workflows if model usage becomes 10x more expensive?",
+    "used": false
+  },
+  {
+    "rank": 15,
+    "hook": "People are locking their thinking into AI platforms too early.",
+    "thesis": "Many users are storing prompts, workflows, and context entirely inside one provider's ecosystem before the market has matured. That creates platform dependency too early in a fast-changing environment.",
+    "angle": "Strategic caution around lock-in and ownership of workflow intelligence.",
+    "CTA": "Ask: Are you building AI workflows you own, or just feeding long-term value into someone else's platform?",
+    "used": false
+  },
+  {
+    "rank": 16,
+    "hook": "80% of US startups are building on Chinese AI models. Zero frontier open-source models come from the US.",
+    "thesis": "The open-source AI race is being won by China (DeepSeek, Qwen, Kimi, MiniMax). US startups depend on Chinese base models. Reflection AI is raising $25B to change that. The geopolitical implications for the agentic stack are massive.",
+    "angle": "Geopolitical/infrastructure take. Where your base model comes from matters when you're building agents that handle sensitive workflows.",
+    "CTA": "Ask: Does it matter where your AI base model was trained?",
+    "used": false
+  },
+  {
+    "rank": 17,
+    "hook": "Anthropic can't afford to serve its best model. That tells you everything about what's coming.",
+    "thesis": "Mythos Preview costs $25/$125 per million tokens (5x Opus). Anthropic hit $30B ARR but still can't serve it broadly. Long-running agent tasks eat massive tokens. The subscription model is breaking. Usage-based and outcome-based pricing is inevitable.",
+    "angle": "Business model / economics angle. Connect compute constraints to how the agent economy gets priced.",
+    "CTA": "Ask: What happens to your AI budget when the best agents cost 5x more to run?",
+    "used": false
+  },
+  {
+    "rank": 18,
+    "hook": "DHH went from typing every line of code to running AI agents in 6 months. Shape Up is already obsolete.",
+    "thesis": "37signals' 2-month product cycle methodology (Shape Up, 2019) already needs rewriting because AI acceleration compressed the timeline. Senior engineers in a 'mech suit' now tackle work that wouldn't have been considered before. The question is what happens to everyone else.",
+    "angle": "Practical operator shift. The productivity divide between agent-fluent seniors and everyone else is widening fast.",
+    "CTA": "Ask: Has AI changed how long your product cycles take?",
+    "used": false
+  }
+]
