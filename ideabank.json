@@ -78,7 +78,8 @@
     "thesis": "Competitive advantage in AI software may come less from model access and more from how tasks are routed, constrained, evaluated, and delegated. Keeping systems on track is where the real leverage lives.",
     "angle": "Founder-grade strategy insight. Good for technical and product-savvy audiences.",
     "CTA": "Ask: What matters more in your stack today: model quality or workflow orchestration?",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-10"
   },
   {
     "rank": 11,

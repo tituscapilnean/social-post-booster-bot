@@ -1,19 +1,21 @@
 ---
 newsletter: AlphaSignal
 sender: news@alphasignal.ai
-subject: Anthropic Glasswing: Claude Mythos finds zero-day vulnerabilities
-date: 2026-04-08
-message_id: 19d6de08008cb9d9
+subject: Anthropic Opus Advisor cuts agent costs 12% with auto-escalation
+date: 2026-04-10
+message_id: 19d7826af6fb539c
 ---
 
-Daily AI briefing covering top news, models, papers, and repos.
+Daily AI briefing. Lead story: Anthropic ships the **advisor tool** in the Claude API.
 
-**Top stories:**
-- Anthropic launches Project Glasswing using Claude Mythos to detect software bugs. Mythos scores 83.1% on CyberGym, 93.9% on SWE-bench Verified, 82.0% on Terminal-Bench 2.0, 79.6% on OSWorld-Verified
-- Z.ai releases open-source GLM-5.1 for long-horizon agentic coding tasks. Scores 58.4 on SWE-Bench Pro (first among open models), reaches 21.5k QPS after 600+ iterations in database optimization
-- Amazon introduces S3 Files for native file system access on S3
+**Advisor strategy (Anthropic):**
+- New Messages API tool (`advisor_20260301`) lets a Sonnet or Haiku executor call Opus only when reasoning gets hard. Single API request, no external orchestration.
+- Executor handles tools and outputs. Advisor reads shared context, returns a plan or correction, exits without producing user-visible responses.
+- **Results:** SWE-bench Multilingual +2.7 points over Sonnet alone. Cost per task drops 11.9% vs Sonnet-only execution. **Haiku jumps from 19.7% to 41.2% on BrowseComp with advisor enabled.** Haiku setup remains 85% cheaper than Sonnet for comparable workloads.
+- Anthropic also ships **Monitor tool**: Claude can run background scripts and wake on events.
 
-**Signals:**
-- Anthropic updates Claude Code with PR autofix from CLI
-- Cognition releases SWE-1.6 with parallel tool calls and fewer reasoning loops
-- World Labs expands Marble models with scalable environment generation
+**Other top news:**
+- OpenAI launches $100/mo Pro tier with higher Codex limits, GPT-5.4 Pro reasoning model access, ~400K context window. Plus tier rebalanced toward steady weekly usage.
+- Meta debuts **Neural Computer**: model trained on screen recordings, predicts next screen state and action. Encodes logic in weights instead of calling APIs/tools. Prototype fails on multi-step reasoning with dependencies.
+- Anthropic exploring own AI chips. Project Rainier: 1GW Trainium2 cluster, ~500K chips, all latest Anthropic models trained on it. $8B Amazon commitment.
+- Perplexity integrates Plaid for bank/credit/loan tracking. Cursor lets agents attach demos and screenshots to PRs. Augment Code hosts 90-min Vibe Code Cup.

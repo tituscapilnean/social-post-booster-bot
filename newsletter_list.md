@@ -25,3 +25,4 @@ newcomer@substack.com
 aiiq@substack.com
 IDO@initialdataoffering.com
 dan@axios.com
+jon@decibel.vc
