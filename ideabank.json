@@ -144,5 +144,13 @@
     "angle": "Practical operator shift. The productivity divide between agent-fluent seniors and everyone else is widening fast.",
     "CTA": "Ask: Has AI changed how long your product cycles take?",
     "used": false
+  },
+  {
+    "rank": 19,
+    "hook": "Most AI product companies are systems integrators wearing a product costume.",
+    "thesis": "Real differentiation requires something a competitor can't rebuild by wiring up the same APIs: a proprietary method, algorithm, model, or technical approach you actually own. Without it, you're not a product company, you're a consulting firm that bills via subscription. Every integration you brag about is also proof of how replaceable you are. In the agentic era, the margin between 'product' and 'systems integration' is the margin between something that compounds and something the next release eats.",
+    "angle": "Sharp operator critique aimed at founders shipping 'AI products' that are really service compositions. Forces the litmus test: what method, model, or algorithm do you actually own? Direct, productive tension with idea #10 (orchestration as moat) — they both can't be right, which is the point. Note: Titus's 'deep tech' means proprietary method/algorithm/model, NOT silicon/biotech/hardware (which is outside his lane).",
+    "CTA": "Ask: name one thing in your stack that couldn't be rebuilt in a weekend with the same API keys.",
+    "used": false
   }
 ]
