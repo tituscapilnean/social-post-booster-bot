@@ -58,6 +58,11 @@ These rules override intuition. Violating them is the most common failure mode.
 
 **Voice:** Op-ed, not news anchor. Avoid engineered hooks and choppy one-liner mic drops. The post should feel like an analyst who runs these systems -- not a content creator optimizing for virality.
 
+**Audience & relevance (non-negotiable):**
+- Every post must be useful to **people who want to build or deploy AI agents** — founders, engineers, PMs, operators shipping agentic products.
+- Every post must **showcase that Titus is tracking the newest tech** — cite models, tools, protocols, releases, or data points from the last 7 days by name (e.g. "Claude Ultraplan," "Anthropic Advisor cascading router," "MCP," "Hermes Agent," "Muse Spark"). Vague references to "AI" without named artifacts fail this bar.
+- If a draft could be written 3 months ago or by someone who doesn't build with agents daily, rewrite it.
+
 **Output format:** Post text only — no intro sentences, no commentary, no hashtags, no "Here's the LinkedIn post:".
 
 ---
@@ -167,6 +172,8 @@ Write two platform-specific versions following the style guide in `config/style.
 **Both versions must:**
 - Weave signals from at least 2 newsletters into one narrative
 - Hit 1-2 of the communication pillars in `config/pillars.md`
+- Speak directly to **builders and operators of AI agents** — name the tradeoff, decision, or system design choice they'll actually face
+- Reference at least **2 named tools, models, protocols, or companies from the last 7 days** to prove Titus is tracking the frontier (not recycling generic "AI is changing everything" commentary)
 
 **LinkedIn version:**
 - 200-350 words, single scroll, no threads, no bullet points
@@ -183,9 +190,9 @@ Write two platform-specific versions following the style guide in `config/style.
 
 Before saving, score the draft on three dimensions (1-5 each). Be honest — a 3 is acceptable, a 2 means revise.
 
-**Relevance (1-5):** Does the post clearly connect to AI agents, agentic workflows, or the agentic economy? Is it grounded in at least 2 concrete signals from today's newsletters?
-- 5 = tight, specific, clearly in Titus's lane
-- 3 = on-topic but generic
+**Relevance (1-5):** Does the post speak to people who build or deploy AI agents — naming a decision, tradeoff, or system design lesson they'll face? Is it grounded in at least 2 concrete signals from today's newsletters, with at least 2 named tools/models/protocols/companies from the last 7 days?
+- 5 = tight, specific, clearly in Titus's lane, useful to an agent-builder reading it
+- 3 = on-topic but generic, or missing named-artifact proof of frontier tracking
 - 1 = could have been written by anyone about anything
 
 **Hotness (1-5):** Is this a conversation happening right now? Does it connect to recent deployments, announcements, or emerging tensions in the field?
@@ -198,7 +205,12 @@ Before saving, score the draft on three dimensions (1-5 each). Be honest — a 3
 - 3 = solid but safe
 - 1 = no tension, no reason to share
 
-**Threshold:** If any score is <= 2, revise the post before proceeding. Show the scores in the output.
+**Relevance to Titus's work (1-5):** Does the post reinforce Titus's positioning around his work at Civic (MCP server hub / gateway) and the agentic-economy infrastructure layer? Does it make sense that *this specific person* — who ships agent infra — would write it? Without being a Civic ad, does it adjacent-sell the worldview Civic is built on (MCP, agent routing, gateway patterns, orchestration infra)?
+- 5 = clearly in Titus's professional lane, strengthens inbound signal for Civic-adjacent conversations
+- 3 = on-topic for agent builders but not specifically leveraging Titus's vantage point
+- 1 = off-lane, could be written by any generalist commentator
+
+**Threshold:** If any score is <= 2, revise the post before proceeding. Show all four scores in the output.
 
 ### Step 10 — Save the draft & update idea bank
 Use the Write tool to save the post to `drafts/YYYY-MM-DD.md` (today's date).
@@ -215,6 +227,7 @@ File format:
 - Relevance: X/5
 - Hotness: X/5
 - Engagement-worthiness: X/5
+- Relevance to Titus's work: X/5
 
 ## LinkedIn
 
@@ -252,8 +265,16 @@ X: [recommended window in PT]
 
 After saving, show the full draft in the conversation so Titus can review it before committing.
 
-### Posting via API
-Once Titus approves the draft, post directly via platform APIs:
+### Posting via scripts
+Once Titus approves the draft, post to **both** platforms using the repo scripts. Never copy to clipboard; never rely on manual paste.
 
-- **X:** Post via `curl` to `https://api.x.com/2/tweets` using the `$X_USER_ACCESS_TOKEN` from `.env` and `.tokens`. The Civic MCP tweet tool has a 280-char limit, so always use the API directly for longer posts.
-- **LinkedIn:** Post via `curl` to `https://api.linkedin.com/v2/ugcPosts` using the `$LINKEDIN_ACCESS_TOKEN`. The LinkedIn person URN is `urn:li:person:aqNMuRfSOs`. Set `lifecycleState` to `PUBLISHED`, `shareMediaCategory` to `NONE`, and visibility to `PUBLIC`.
+- **X:** `./scripts/post-x.sh "$(cat <<'EOF'
+post text here
+EOF
+)"` — wraps the X API v2 `/2/tweets` endpoint with the OAuth 2.0 user token. Returns the posted tweet URL.
+- **LinkedIn:** `./scripts/post-linkedin.sh "$(cat <<'EOF'
+post text here
+EOF
+)"` — wraps the LinkedIn UGC `/v2/ugcPosts` endpoint. Returns 201 on success.
+
+Both scripts accept the post text as an arg or via stdin. Always use a heredoc for multi-line posts so newlines and special characters survive shell quoting. Do not fall back to `pbcopy` or any clipboard/manual-paste workflow.

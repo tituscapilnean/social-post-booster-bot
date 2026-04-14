@@ -152,5 +152,30 @@
     "angle": "Sharp operator critique aimed at founders shipping 'AI products' that are really service compositions. Forces the litmus test: what method, model, or algorithm do you actually own? Direct, productive tension with idea #10 (orchestration as moat) — they both can't be right, which is the point. Note: Titus's 'deep tech' means proprietary method/algorithm/model, NOT silicon/biotech/hardware (which is outside his lane).",
     "CTA": "Ask: name one thing in your stack that couldn't be rebuilt in a weekend with the same API keys.",
     "used": false
+  },
+  {
+    "rank": 20,
+    "hook": "Anthropic is trying to swallow the entire app layer. The physics may stop it before the competition does.",
+    "thesis": "Claude is rapidly absorbing adjacent app-builder surfaces (leaked Lovable-style builder), legal, finance, security, automation, dev tools — collapsing the reason to exist for a large chunk of vertical SaaS and no-code platforms. The binding constraint isn't market share; it's compute. $30B ARR, training next model is a money pit, model relevance window 6-9 months, cost per token halving every 3 months. The question isn't whether Anthropic wins the app layer. It's whether the infra keeps up before the ambition breaks.",
+    "angle": "Platform-war thesis aimed at founders building on top of Claude. Forces the question: am I building something Anthropic will ship as a feature in 90 days? Pairs well with idea #15 (lock-in) and idea #14 (inference pricing catches up).",
+    "CTA": "Ask: if Claude shipped your product as a native feature next month, what would still be yours?",
+    "used": false
+  },
+  {
+    "rank": 21,
+    "hook": "Every serious agent pattern in 2026 routes judgment. Taste-placement is the product.",
+    "thesis": "Advisor is a taste checkpoint priced into the token bill. Ultraplan is a taste checkpoint held in a browser. Linux accepts AI patches but requires a human signature. MCP gateways are where taste-routing lives at the protocol level. The frontier isn't autonomy — it's deciding where in the call stack a human-or-bigger-model gets consulted, and who pays when they do.",
+    "angle": "Infrastructure-layer thesis that reframes the orchestrator pillar. Directly adjacent to Civic's MCP gateway positioning: the value isn't the model, it's the routing policy. Good for follow-ups that go deeper on specific patterns (cascading routers, plan/execute splits, signature requirements).",
+    "CTA": "Ask: show me where in your call stack a human (or a bigger model) gets invoked — and what it costs.",
+    "used": false
+  },
+  {
+    "rank": 22,
+    "hook": "Agents crossed from suggest to commit. The rollback layer is the next billion-dollar surface.",
+    "thesis": "Shopify gave agents write access to 5.6M stores / $378B GMV for one-prompt SEO overhauls. OpenClaw runs an end-to-end vending-machine business in a SF startup tower. Amazon's Kiro deleted a production environment trying to fix a routine bug. Linux kernel accepts AI-written patches but requires a human signature because the human inherits all liability. Anthropic's Mythos autonomously found a 27-year FreeBSD exploit. Every shipment this week skipped the 'suggest to human' step that demos were built around six months ago, but the industry admitted the same week that who-signs, who-rolls-back, who-pays-when-it's-wrong is still a fully human problem.",
+    "angle": "Infrastructure thesis directly in Civic's MCP gateway lane — gateways are where write-access policy, logging, revert hooks, and per-call pricing live. Positions Titus as someone asking the load-bearing question agent founders aren't yet hearing from their VCs.",
+    "CTA": "Ask: when your agent commits to the wrong thing, what gets rolled back — and at what cost?",
+    "used": true,
+    "used_date": "2026-04-14"
   }
 ]

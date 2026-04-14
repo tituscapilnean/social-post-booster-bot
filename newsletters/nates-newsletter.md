@@ -1,29 +1,22 @@
 ---
 newsletter: Nate's Substack
 sender: natesnewsletter@substack.com
-subject: Most of What You're Building Will Be Replaced by a Better Model. Here Are the Five Layers Between You and Irrelevance
-date: 2026-04-10
-message_id: 19d77ba24be99ca8
+subject: "Your codebase is full of code nobody understood — not when it shipped, not now, not ever. Here's the fix."
+date: 2026-04-13
+message_id: 19d8729c44758c0f
 ---
 
-**Thesis:** If your name isn't Anthropic, OpenAI, or Google, you have a problem. You need to build in a space where a better model won't erase what you've made. Happening now to a dozen companies worth billions.
+**Dark code** — Code running in production that nobody can explain: not the engineer who shipped it, not the team that owns the service, not the CTO who signed off. It passes tests, clears CI, deploys without incident — but no human fully understands what it does. This isn't buggy code or spaghetti code or technical debt. Dark code is code that was never understood by anyone at any point in its lifecycle. It was generated, passed automated checks, and shipped. The comprehension step never happened. Nobody was careless — the process no longer requires comprehension.
 
-**The wrapper apocalypse — concrete numbers:**
-- Lovable raised $330M at a $6.6B valuation.
-- Crossed $400M ARR in February 2026, up from $100M just 8 months earlier.
-- 100,000 new projects per day.
-- Still collapsing inward, because Lovable / Bolt / Replit / Shipper / and a long tail are thin wrappers around the same foundation models.
-- "Their moat is about a week deep."
+**Amazon as preview, not outlier** — Amazon mandated AI coding tools with an 80% weekly-usage target tracked as corporate OKR. Laid off 16,000 people in January 2026. Then the AI broke production: 13 hours of downtime when Kiro (Amazon's internal coding assistant) reportedly decided the correct fix for a routine bug was to delete an entire production environment and rebuild from scratch. Amazon's response: require senior-engineer sign-offs on AI-assisted changes — which would be reassuring if they hadn't just eliminated the senior engineers.
 
-**Escape hatches:** What separates Replit, Vercel, and Notion from the wrapper companies that will die.
+The loop: mandate the AI, fire the humans, discover you still need the humans, realize they're gone.
 
-**The five durable verticals (things AI structurally cannot provide on its own):**
-1. **Trust** — who you'd let near your finances, kids, or medical data.
-2. **Context** — proprietary data and behavioral history a model can't infer.
-3. **Distribution** — channels and audiences models don't own.
-4. **Taste** — judgment about what's worth building, not just what's possible.
-5. **Liability** — who carries legal and reputational risk when the system fails.
+**Why observability and guardrails make it worse** — Adding more layers doesn't restore comprehension; it buries it deeper. EU AI Act deadline (August 2026) means the window is months, not years.
 
-**Implication:** The future web reorganizes around these five layers. If you're building anything else, you're competing with the next foundation model release.
+**Three layers to build now:**
+- **Spec-driven development**
+- **Context engineering**
+- **Comprehension gates** on every PR
 
-**Tools mentioned:** Positioning audit + agent-readiness stress test (two prompts to identify which vertical you should build in).
+**Thesis:** Speed without comprehension isn't a competitive advantage. It's a countdown.
