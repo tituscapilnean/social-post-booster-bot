@@ -1,0 +1,32 @@
+id: "tool_selection_1"
+description: "Agent should describe reading a file before editing it, using a minimal approach"
+
+prompt: |
+  You have access to these tools: Read, Edit, Bash.
+  A user asks you to fix a typo in src/config.ts where "teh" should be "the".
+  Describe step-by-step what you would do. Be concise.
+
+context_files: []
+tools: []
+
+graders:
+  - type: deterministic
+    name: "mentions_reading_file"
+    command: "echo \"$OUTPUT\" | grep -qiE '(read|reading|look at|check|open|view)'"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "mentions_edit"
+    command: "echo \"$OUTPUT\" | grep -qiE '(edit|replace|change|fix|update)'"
+    expect_exit: 0
+
+  - type: llm_judge
+    name: "tool_usage_quality"
+    rubric: |
+      Evaluate the agent's described approach to fixing the typo:
+      1. Does it read/examine the file before making changes? (1-5)
+      2. Does it use a minimal set of steps (not over-engineering)? (1-5)
+      3. Is the approach logical and sequential? (1-5)
+
+      Return JSON: {"scores": {"read_first": N, "minimal_tools": N, "logical_sequence": N}, "reasoning": "...", "pass": true/false}
+      Pass if all scores >= 4.

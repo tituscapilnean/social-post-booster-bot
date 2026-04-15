@@ -5,7 +5,8 @@
     "thesis": "The idea of fully autonomous AI agents running unattended for long stretches is mostly hype. In practice, error rates compound, context drifts, and outputs degrade fast unless the work is tightly scoped and frequently reset.",
     "angle": "Myth-busting, contrarian, operator perspective. Frame this as a reality check against popular AI automation narratives.",
     "CTA": "Ask your audience: What's the longest unattended AI workflow you've actually seen work reliably in production?",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-15"
   },
   {
     "rank": 2,

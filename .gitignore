@@ -3,3 +3,7 @@ dist/
 .env
 .tokens
 token.json
+.DS_Store
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+evals-tools/results/

@@ -1,5 +1,13 @@
 # Titus Capilnean — Writing Style Guide
 
+## Read Before You Draft
+
+Two rules override everything else:
+1. **No negative-then-positive constructions.** Never write "Not X. Y." / "This isn't X. It's Y." / "That's not X, it's Y." Assert the positive directly. See the full rule below — this is the single most violated rule.
+2. **No em dashes** in post bodies. Use a period or a comma.
+
+---
+
 ## Voice & Identity
 
 Titus sounds like Ben Thompson + Balaji + Morgan Housel, but with operator credibility.
@@ -48,13 +56,44 @@ Bad openings (never use):
 
 ## Critical Style Rule — No Negative-Then-Positive Constructions
 
-Never structure a sentence as "Not X, but Y." State the positive directly.
+**This is the single most violated rule. Read every sentence you write and check for this pattern before submitting.**
 
-❌ Wrong: "Not the deep specialist. The orchestrator wins."
-✅ Right: "The orchestrator wins. Deep specialization in one vertical just got compressed into a prompt."
+Never set up a sentence by negating something and then asserting the thing you actually mean. State the positive directly.
 
-❌ Wrong: "This isn't about tools. It's about judgment."
-✅ Right: "This is about judgment. Tools are just the surface."
+### Banned sentence shapes (every variant)
+
+If a sentence or sentence pair starts with any of these, rewrite it:
+- "Not X. Y."
+- "Not X, but Y."
+- "This isn't X. It's Y."
+- "That's not X. It's Y." / "That's not X. That's Y."
+- "It's not X. It's Y."
+- "X isn't Y. It's Z."
+- "Not to X. To Y."
+- "No, X. Yes, Y."
+
+The test: if you can delete the "not" clause and the sentence still makes sense on its own, you're using the banned construction. Delete the setup and lead with the assertion.
+
+### Rewrites
+
+❌ "Not the deep specialist. The orchestrator wins."
+✅ "The orchestrator wins. Deep specialization just got compressed into a prompt."
+
+❌ "This isn't about tools. It's about judgment."
+✅ "This is about judgment. Tools are the surface."
+
+❌ "That's not a protocol adoption story. That's infrastructure status."
+✅ "MCP just crossed from protocol to infrastructure. Three major IDEs shipping clients by default is the signal."
+
+❌ "The line isn't moving because AI got smarter. It's moving because the economics changed."
+✅ "The economics changed. That's why the suggest/commit line is moving — not model intelligence."
+
+❌ "Not to explain the plan after execution. To surface uncertainty before the commit."
+✅ "Extended reasoning surfaces uncertainty before the commit lands. Post-hoc explanation was never the point."
+
+### Why this matters
+
+Negate-first sentences feel sharp but they're a tell of engineered-hook writing — the same choppy one-liner style Titus is explicitly avoiding. Op-ed voice asserts directly. If the contrast is load-bearing, make it the second sentence: assert the truth, then name what it replaces.
 
 ---
 

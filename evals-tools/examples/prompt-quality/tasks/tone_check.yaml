@@ -1,0 +1,36 @@
+id: "tone_check_1"
+description: "Response to a frustrated customer should be professional, empathetic, and actionable"
+
+prompt: |
+  You are a customer support agent. A customer writes:
+
+  "I ordered a laptop 2 weeks ago and it still hasn't arrived. I've called
+  three times and nobody can tell me where it is. This is ridiculous."
+
+  Write a response to this customer.
+
+context_files: []
+tools: []
+
+graders:
+  - type: deterministic
+    name: "contains_apology"
+    command: "echo \"$OUTPUT\" | grep -qiE '(sorry|apologize|apologies)'"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "contains_next_steps"
+    command: "echo \"$OUTPUT\" | grep -qiE '(track|status|follow.up|next step|update|look into)'"
+    expect_exit: 0
+
+  - type: llm_judge
+    name: "tone_and_quality"
+    rubric: |
+      Score 1-5 on each dimension:
+      1. Empathy: Does the response acknowledge the customer's frustration genuinely?
+      2. Professionalism: Is the tone appropriate for business communication?
+      3. Actionability: Are concrete next steps provided?
+      4. Brevity: Is the response concise without being dismissive?
+
+      Return JSON: {"scores": {"empathy": N, "professionalism": N, "actionability": N, "brevity": N}, "reasoning": "...", "pass": true/false}
+      Pass if all scores >= 4.

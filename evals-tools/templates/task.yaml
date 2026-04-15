@@ -1,0 +1,72 @@
+# Eval Task Definition
+# Each task represents a single test case for your LLM step.
+
+# Unique identifier for this task
+id: "my_task_1"
+
+# Human-readable description of what this task tests
+description: "Describe the expected behavior being tested"
+
+# The prompt sent to the model
+# Use | for multi-line prompts
+prompt: |
+  Your prompt goes here.
+  It can span multiple lines.
+
+# Optional: files to include as context (paths relative to repo root)
+context_files: []
+  # - "src/prompts/system.md"
+  # - "src/schemas/output.json"
+
+# Optional: tools the agent should have access to
+tools: []
+  # - "read_file"
+  # - "write_file"
+  # - "bash"
+
+# Optional: working directory for the agent (relative to repo root)
+# workdir: "."
+
+# Optional: override suite-level timeout (seconds)
+# timeout: 60
+
+# Graders — at least one required. All must pass for the task to pass.
+graders:
+  # Deterministic grader: runs a shell command, checks exit code
+  # $OUTPUT is replaced with the model's response
+  - type: deterministic
+    name: "contains_expected_keyword"
+    command: "echo \"$OUTPUT\" | grep -qi 'expected_keyword'"
+    expect_exit: 0
+
+  # LLM-as-judge grader: Claude evaluates the output against a rubric
+  - type: llm_judge
+    name: "quality_rubric"
+    rubric: |
+      Evaluate the response on these dimensions (score 1-5 each):
+      1. Accuracy: Does it correctly address the prompt?
+      2. Completeness: Does it cover all required aspects?
+      3. Clarity: Is it well-structured and easy to understand?
+
+      Return JSON: {"accuracy": N, "completeness": N, "clarity": N, "pass": true/false}
+      Pass if all scores >= 4.
+
+  # State check grader: verifies file system or environment state
+  - type: state_check
+    name: "output_file_created"
+    check: "file_exists"
+    path: "./output/result.txt"
+
+  # State check: verify file contains expected content
+  # - type: state_check
+  #   name: "output_content_correct"
+  #   check: "file_contains"
+  #   path: "./output/result.txt"
+  #   pattern: "expected content regex"
+
+  # State check: verify a command succeeds (e.g., tests pass)
+  # - type: state_check
+  #   name: "tests_pass"
+  #   check: "command"
+  #   command: "npm test"
+  #   expect_exit: 0

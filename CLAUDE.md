@@ -21,10 +21,21 @@ ideabank.json       # Post ideas with used/unused tracking. Draw from unused ide
 drafts/
   YYYY-MM-DD.md  # One file per day, written by the agent after post generation
 
+evals/
+  README.md                       # How to run, what each task tests
+  golden-examples.md              # Engagement-pattern reference set (LinkedIn + X)
+  social-post-quality/
+    suite.yaml                    # Eval suite config (model, trial count)
+    tasks/                        # linkedin_style, x_style, voice_quality, pillar_alignment, competitor_filter
+evals-tools/                      # Portable eval framework — runner, graders, templates
+
 .claude/
   settings.json          # Registers the SessionStart hook
   hooks/session-start.sh # Creates drafts/ dir in remote Claude Code sessions
+  commands/eval.md       # Symlink to evals-tools/commands/eval.md — enables /eval slash command
 ```
+
+**Evals:** Run `bash evals-tools/lib/runner.sh evals/social-post-quality/suite.yaml` (or `/eval evals/social-post-quality/suite.yaml`) to validate the post-generation prompt against Titus's style and voice rules. Results land in `evals-tools/results/<run-id>/summary.md`. Requires `yq` and `jq` (`brew install yq jq`).
 
 **MCP dependency:** The workflow requires the Civic MCP server (profile: `social-media-toolkit`) for Gmail search/fetch and Twitter post tools. Without it, Steps 1-3 and any posting steps cannot run.
 
@@ -68,6 +79,12 @@ These rules override intuition. Violating them is the most common failure mode.
 ---
 
 ## Workflow
+
+### Step 0 — Ask how many days to generate
+Before anything else, ask Titus: "How many days of posts should I generate? (default: 1 for today)". Titus may want to draft in advance so he can schedule a batch.
+
+- **1 day (default)** → target date is today. Run the full flow once.
+- **N > 1 days** → target dates are today, today+1, ..., today+(N-1). Run Steps 1-6 once (shared setup and newsletter pool), then loop Steps 7-10 per target date. Each day gets a distinct angle — track which idea bank entries and newsletter signals are used within the batch so you don't repeat. Step 2 only applies to today's post (future dates have no performance data yet).
 
 ### Step 1 — Verify posting tokens
 Before starting the workflow, test the X and LinkedIn auth tokens by running:
@@ -259,11 +276,20 @@ X: [recommended window in PT]
 - ...
 ```
 
+### Step 11 — Validate with evals
+After all drafts in the batch are saved, run deterministic style checks against each saved draft's LinkedIn body (word count 200-350, no em dashes, no hashtags, no banned openings) and X body (400-600 chars, @handle present, multi-line). Flag any violations and revise before showing to Titus.
+
+Once per batch (not per post), run the full eval suite as a config drift check:
+```
+bash evals-tools/lib/runner.sh evals/social-post-quality/suite.yaml
+```
+This generates synthetic posts against the style/pillars config and grades them — it does not grade the saved drafts directly. Use it to catch prompt/config regressions. If any non-draft-specific task fails (voice_quality, pillar_alignment, x_style), surface the failure and the transcript path to Titus so the config can be tightened.
+
 ---
 
 ## Output
 
-After saving, show the full draft in the conversation so Titus can review it before committing.
+After saving, show the full draft in the conversation so Titus can review it before committing. For multi-day batches, show each day's draft in order with its target date, and let Titus approve, redirect, or skip per day.
 
 ### Posting via scripts
 Once Titus approves the draft, post to **both** platforms using the repo scripts. Never copy to clipboard; never rely on manual paste.

@@ -1,0 +1,6 @@
+name: "prompt-quality"
+description: "Validates LLM output quality for tone, accuracy, and tool selection"
+model: "sonnet"
+trials_per_task: 3
+tasks_dir: "./tasks"
+timeout: 120

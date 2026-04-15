@@ -1,0 +1,53 @@
+id: "x_style"
+description: "X post follows Titus's format: 400-600 chars, multi-line, no hashtags, no banned openings, ends with implication or reply-bait, tags companies with @handles when named"
+
+prompt: |
+  You are Titus Capilnean's social media ghostwriter. Generate a single X post (not a thread) about how Anthropic's new Advisor router and the Hermes Agent release are converging on the same idea: a planner/executor split where cheap models do the work and a smarter model only intervenes on uncertainty.
+
+  Use these newsletter signals as source material:
+  - Signal 1: "Anthropic Advisor: a cascading router that delegates the commit step to a cheaper model only when planner confidence clears a threshold." (Latent Space)
+  - Signal 2: "Nous Research shipped Hermes Agent — a small open model fine-tuned to take MCP tool calls from a planner." (The Sequence)
+
+  Follow the style guide and pillars provided. Multi-line, 400-600 characters. Tag companies with @handles when named. Output ONLY the post text — start directly with the post.
+
+context_files:
+  - "config/style.md"
+  - "config/pillars.md"
+
+tools: []
+
+graders:
+  - type: deterministic
+    name: "char_count_min_400"
+    command: "char_count=$(printf '%s' \"$OUTPUT\" | wc -c | tr -d ' '); [ \"$char_count\" -ge 400 ]"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "char_count_max_600"
+    command: "char_count=$(printf '%s' \"$OUTPUT\" | wc -c | tr -d ' '); [ \"$char_count\" -le 600 ]"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_hashtags"
+    command: "echo \"$OUTPUT\" | grep -qE '#[A-Za-z]' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "is_multi_line"
+    command: "line_count=$(printf '%s' \"$OUTPUT\" | grep -c '.' | tr -d ' '); [ \"$line_count\" -ge 2 ]"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "has_at_handle"
+    command: "echo \"$OUTPUT\" | grep -qE '@[A-Za-z][A-Za-z0-9_]+'"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_today"
+    command: "first_word=$(echo \"$OUTPUT\" | awk 'NF{print $1; exit}'); echo \"$first_word\" | grep -qi '^today' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_heres"
+    command: "first_word=$(echo \"$OUTPUT\" | awk 'NF{print $1; exit}'); echo \"$first_word\" | grep -qiE \"^here[''ʼ]?s\" && exit 1 || exit 0"
+    expect_exit: 0

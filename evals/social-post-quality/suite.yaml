@@ -1,0 +1,6 @@
+name: "social-post-quality"
+description: "Validates Titus's generated LinkedIn and X posts for style compliance, voice quality, pillar alignment, frontier-tracking, and competitor filtering"
+model: "sonnet"
+trials_per_task: 3
+tasks_dir: "./tasks"
+timeout: 240

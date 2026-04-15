@@ -1,0 +1,91 @@
+id: "linkedin_style"
+description: "LinkedIn post follows Titus's formatting rules: 200-350 words, no banned openings, no hashtags, no bullet points, no em dashes, no negative-then-positive constructions"
+
+prompt: |
+  You are Titus Capilnean's social media ghostwriter. Generate a single LinkedIn post about how the new wave of agent runtimes (Claude Ultraplan, Anthropic Advisor cascading router) is collapsing the line between "suggest" and "commit" — and what that means for builders deciding when an agent should ask vs. act.
+
+  Use these newsletter signals as source material:
+  - Signal 1: "Anthropic shipped Advisor, a cascading router that lets a planner agent delegate the commit step to a cheaper model only after the plan passes a confidence threshold." (Latent Space)
+  - Signal 2: "MCP adoption hit a tipping point this week — three major IDEs now ship MCP clients by default." (Stratechery)
+
+  Follow the style guide and pillars provided. Output ONLY the post text — start directly with the post, no intro.
+
+context_files:
+  - "config/style.md"
+  - "config/pillars.md"
+
+tools: []
+
+graders:
+  - type: deterministic
+    name: "word_count_min_200"
+    command: "word_count=$(echo \"$OUTPUT\" | wc -w | tr -d ' '); [ \"$word_count\" -ge 200 ]"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "word_count_max_350"
+    command: "word_count=$(echo \"$OUTPUT\" | wc -w | tr -d ' '); [ \"$word_count\" -le 350 ]"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_hashtags"
+    command: "echo \"$OUTPUT\" | grep -qE '#[A-Za-z]' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_bullet_points"
+    command: "echo \"$OUTPUT\" | grep -qE '^[[:space:]]*[-*•][[:space:]]' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_em_dashes"
+    command: "echo \"$OUTPUT\" | grep -qF '—' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_i"
+    command: "first_word=$(echo \"$OUTPUT\" | awk 'NF{print $1; exit}'); echo \"$first_word\" | grep -qiE '^(I|I[''ʼ]ve|I[''ʼ]m|I[''ʼ]ll)$' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_today"
+    command: "first_word=$(echo \"$OUTPUT\" | awk 'NF{print $1; exit}'); echo \"$first_word\" | grep -qi '^today' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_heres"
+    command: "first_word=$(echo \"$OUTPUT\" | awk 'NF{print $1; exit}'); echo \"$first_word\" | grep -qiE \"^here[''ʼ]?s\" && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_let_me"
+    command: "first_two=$(echo \"$OUTPUT\" | awk 'NF{print $1, $2; exit}'); echo \"$first_two\" | grep -qiE '^let me' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: deterministic
+    name: "no_banned_opening_in_this_post"
+    command: "first_three=$(echo \"$OUTPUT\" | awk 'NF{print $1, $2, $3; exit}'); echo \"$first_three\" | grep -qiE '^in this post' && exit 1 || exit 0"
+    expect_exit: 0
+
+  - type: llm_judge
+    name: "no_negative_then_positive"
+    rubric: |
+      You are checking for a banned rhetorical construction in Titus's post style.
+
+      BANNED: "Not X, but Y" / "Not the X. The Y wins." / "This isn't about X. It's about Y."
+      The post must NOT use sentences that negate first and then assert. Titus wants positive direct assertions instead.
+
+      Examples of the banned pattern:
+      - "Not the deep specialist. The orchestrator wins."
+      - "This isn't about tools. It's about judgment."
+      - "Not a feature. A platform shift."
+
+      Examples of the allowed alternative:
+      - "The orchestrator wins. Deep specialization just got compressed into a prompt."
+      - "This is about judgment. Tools are just the surface."
+
+      Score 1-5 on:
+      1. negative_then_positive_avoidance: 5 = no instances; 3 = one borderline instance; 1 = multiple uses of the banned pattern.
+
+      Return JSON: {"scores": {"negative_then_positive_avoidance": N}, "reasoning": "...", "pass": true/false}
+      Pass if score >= 4.
