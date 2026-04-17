@@ -120,7 +120,8 @@
     "thesis": "Many users are storing prompts, workflows, and context entirely inside one provider's ecosystem before the market has matured. That creates platform dependency too early in a fast-changing environment.",
     "angle": "Strategic caution around lock-in and ownership of workflow intelligence.",
     "CTA": "Ask: Are you building AI workflows you own, or just feeding long-term value into someone else's platform?",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-17"
   },
   {
     "rank": 16,
@@ -178,5 +179,21 @@
     "CTA": "Ask: when your agent commits to the wrong thing, what gets rolled back — and at what cost?",
     "used": true,
     "used_date": "2026-04-14"
+  },
+  {
+    "rank": 23,
+    "hook": "The tokenizer is a pricing lever. Model providers just discovered they can change the price without touching the sticker.",
+    "thesis": "Opus 4.7 shipped at the same $5/$25 per MTok but the new tokenizer can use up to 35% more tokens for identical text, and xhigh is the new default effort. Combined, that's a structural price increase disguised as a capability upgrade. This is the first time tokenization has visibly been used as a monetization surface. Builders running at defaults are paying 20-40% more in real terms with no announcement, no line item, no opt-in. The next shoe: context-compaction quality, tool-call token overhead, adaptive-thinking budget, and advisor-cascade pricing all become pricing levers too. If you can't see your per-step token bill, you can't see your actual vendor cost.",
+    "angle": "Pricing/economics angle aimed at founders and buyers. Pairs with idea #14 (inference pricing catches up). Civic-adjacent because gateway-layer observability is what makes this visible.",
+    "CTA": "Ask: do you know what your agent costs per completed task, or just what the provider's invoice says?",
+    "used": false
+  },
+  {
+    "rank": 24,
+    "hook": "Claude Code needs 129GB of RAM per session. Hermes Agent runs on 3,575 characters. One of these is wrong about what memory is for.",
+    "thesis": "The agent-OS split isn't about features; it's about memory philosophy. Session-state architectures (Claude Code, most commercial harnesses) treat memory as everything the model might need, kept hot. Compressed-context architectures (Hermes at 72K stars, VaultCrux compressing 80K to 2K tokens, Karpathy's LLM Wiki replacing RAG) treat memory as a deliberate, portable artifact the model re-reads. The first gives you a genius with a hoarding problem. The second gives you a portable brain you can move. Platform lock-in is a consequence of the first; portability is a consequence of the second. The architecture choice is a political choice about who owns the working intelligence.",
+    "angle": "Infrastructure thesis. Directly aligned with Nate Jones's 'memory replaced the model as the moat' framing and the Letta/Ramya Chinnadurai X-timeline conversation on memory portability. Civic-adjacent at the gateway/context layer.",
+    "CTA": "Ask: if your provider disappeared tomorrow, how much of your agent's working memory could you take with you?",
+    "used": false
   }
 ]

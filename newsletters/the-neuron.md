@@ -1,30 +1,44 @@
 ---
 newsletter: The Neuron
 sender: theneuron@newsletter.theneurondaily.com
-subject: Watch: Reflection AI's $25B bet to out-open-source DeepSeek
-date: 2026-04-08
-message_id: 19d6e43090296258
+subject: 😺 Opus 4.7 just made Claude more expensive
+date: 2026-04-17
+message_id: 19d9b1f13a87f342
 ---
 
-**Reflection AI raising at $25B valuation:**
-- In talks to raise $2.5B, backed by NVIDIA and potentially JPMorgan Chase
-- Up from $8B valuation in Oct 2025, and $545M less than a year before that (46x increase)
-- Signed $6.8B deal to build South Korea's largest AI data center, with US Commerce Secretary at signing
-- Co-founded by Ioannis Antonoglou, who co-created AlphaGo at Google DeepMind
+**Headline: Opus 4.7 dropped. OpenAI overhauled Codex. Same day.**
 
-**Open-source AI landscape:**
-- 80% of US startups building on Chinese base models (per a16z partner estimate)
-- Zero frontier open-weight models currently come from the US
-- Chinese competitors: DeepSeek, Moonshot AI (Kimi), Z.ai (GLM), MiniMax (just IPO'd in Hong Kong), Alibaba's Qwen (1B+ downloads on HuggingFace), ByteDance's Doubao, Tencent's Hunyuan
-- US open-source: Meta absent for ~2 years rebuilding key AI lab; Google's Gemma 4 (2M+ downloads); smaller players like Arcee (Trinity models)
+**Claude Opus 4.7:**
+- Same $5/$25 per MTok pricing as 4.6 — sticker price unchanged.
+- Vision: 69.1% → 82.1% on benchmarks. Images up to 2,576 pixels on long edge (3x prior Claude).
+- SWE-bench Pro: 53.4% → 64.3%. #1 on Vals AI Vibe Code Benchmark at 71%.
+- **Hidden cost:** New tokenizer can use up to 35% more tokens for the same text. Combined with Claude Code's new `xhigh` effort default, Pro and Max users hit weekly caps faster unless they manually dial down. "A friend hit their weekly Max limit in basically one prompt."
+- `xhigh` is the new Claude Code default (use `/effort` to step down).
+- Web app gets adaptive thinking — Claude decides how long to think.
 
-**Key quotes from Reflection AI CTO:**
-- "Every frontier open model is Chinese" -- wants to change that
-- "All else being equal, open wins every day" -- thesis for open-source as default
-- "Conductors of an agent orchestra" -- vision for coding in one year: directing a team of AI agents, not writing code
-- On safety: open-source AI is actually safer than closed models (Linux analogy)
-- "We build it in America, but we build it for the world"
+**Launch-day playbooks from Claude Code team (Boris Cherny, Cat Wu):**
+Treat 4.7 like an engineer you're delegating to, not a pair programmer you guide line by line.
+1. Front-load context (goal, constraints, acceptance criteria in turn 1).
+2. Turn on auto mode (Shift+Tab) — safety classifier handles permission prompts, enables parallel Claudes.
+3. Tell it how to verify its own work (2-3x quality multiplier). Put testing workflow in `claude.md` or install `/verify-app` skill.
+4. `xhigh` is the new default — use `/effort` to step down on routine work.
 
-**Also noted:**
-- Surge AI hit $1.2B revenue without VC; VP says even best models fail ~40% of workplace tasks; predicts $1B company with one human employee by 2030
-- Carta CMO data: solo founders taking over the startup landscape
+**OpenAI Codex overhaul (same day):** Desktop app = full agent workstation. Mac-level computer use, in-app browser, persistent memory, automations that wake across days, 90+ plugins (Atlassian Rovo, CircleCI, Microsoft Suite). Free with ChatGPT account.
+
+**CLAUDE.md nesting (AI Skill of the Day):** Taylor Pearson — Claude Code auto-loads CLAUDE.md from every parent directory. Structure: Global (~/CLAUDE.md) → Vault folder → Business folder → Project folder. Claude walks up the tree loading all four into first message. Run a `/wrap` routine end-of-session to update relevant CLAUDE.md files. Starter repo: `claudesidian`.
+
+**Other beats:**
+- Anthropic CPO Mike Krieger resigned from Figma's board same day reports surfaced Anthropic is shipping design software.
+- Canva 2.0: rebranded as "an AI platform with design tools" at $42B IPO test.
+- Qwen3.6-35B-A3B (35B sparse, 3B active) rivals Claude Sonnet 4.5 on vision. Simon Willison's laptop-local version drew a better pelican than Opus 4.7.
+- Factory raised $150M from Khosla at $1.5B valuation for autonomous coding agents that switch between models by task complexity; Keith Rabois joined the board.
+- OpenAI's chief economist published AI Jobs Transition Framework: 18% of 900+ occupations face higher near-term automation risk, 24% reorganize, 12% grow, 46% see less change.
+- OpenAI launched GPT-Rosalind (life-sciences model) with Moderna, Amgen, Allen Institute, Thermo Fisher.
+- White House preparing to give federal agencies access to Anthropic Mythos.
+- Perplexity launched Personal Computer — Mac app reads/writes local files, drives iMessage, Mail, Calendar.
+
+**Big read — Sequoia: "Services: The New Software":** Next $1T company sells the work, not the software. Autopilot opportunities mapped: insurance ($140-200B), accounting ($50-80B), tax advisory ($30-35B), recruitment ($200B+).
+
+**Amazon AI agent canceled a webcomic creator's 15-year account + Prime + income from self-published books. No flag, no appeal, no human.** Another creator Tom Ray lost his per-page comics catalog back to 2018. "When an 800-pound gorilla outsources due process to a moderation LLM, losing one platform can mean losing a life's work."
+
+**Takeaway:** Opus 4.7 is a better model AND a more expensive one, even with unchanged sticker prices. The people who get the most out of it follow the playbook. The rest pay the tokenizer tax.
