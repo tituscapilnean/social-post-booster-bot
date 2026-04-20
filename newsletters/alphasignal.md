@@ -1,21 +1,25 @@
 ---
 newsletter: AlphaSignal
 sender: news@alphasignal.ai
-subject: Anthropic Opus Advisor cuts agent costs 12% with auto-escalation
-date: 2026-04-10
-message_id: 19d7826af6fb539c
+subject: "🎨 Anthropic Claude Design: chat-to-prototype with auto brand system"
+date: 2026-04-20
+message_id: 19dac06c8283e1e1
 ---
 
-Daily AI briefing. Lead story: Anthropic ships the **advisor tool** in the Claude API.
+**Anthropic launched Claude Design** — design tool you describe, it builds prototypes, slides, one-pagers. Powered by Opus 4.7. Research preview on Pro, Max, Team, Enterprise.
 
-**Advisor strategy (Anthropic):**
-- New Messages API tool (`advisor_20260301`) lets a Sonnet or Haiku executor call Opus only when reasoning gets hard. Single API request, no external orchestration.
-- Executor handles tools and outputs. Advisor reads shared context, returns a plan or correction, exits without producing user-visible responses.
-- **Results:** SWE-bench Multilingual +2.7 points over Sonnet alone. Cost per task drops 11.9% vs Sonnet-only execution. **Haiku jumps from 19.7% to 41.2% on BrowseComp with advisor enabled.** Haiku setup remains 85% cheaper than Sonnet for comparable workloads.
-- Anthropic also ships **Monitor tool**: Claude can run background scripts and wake on events.
+Key behavior: during onboarding, Claude reads your codebase and design files to build a persistent design system, then applies your colors/typography/components automatically to every project. Handoff bundle goes straight to Claude Code for implementation — full idea-to-code pipeline.
 
-**Other top news:**
-- OpenAI launches $100/mo Pro tier with higher Codex limits, GPT-5.4 Pro reasoning model access, ~400K context window. Plus tier rebalanced toward steady weekly usage.
-- Meta debuts **Neural Computer**: model trained on screen recordings, predicts next screen state and action. Encodes logic in weights instead of calling APIs/tools. Prototype fails on multi-step reasoning with dependencies.
-- Anthropic exploring own AI chips. Project Rainier: 1GW Trainium2 cluster, ~500K chips, all latest Anthropic models trained on it. $8B Amazon commitment.
-- Perplexity integrates Plaid for bank/credit/loan tracking. Cursor lets agents attach demos and screenshots to PRs. Augment Code hosts 90-min Vibe Code Cup.
+Can build: interactive prototypes (shareable, user-testable, no PR), wireframes (handoff to Claude Code), pitch decks (PPTX export or direct to Canva).
+
+**Claude for Microsoft Word** shipped same week on Pro and Max plans. Opus 4.7 inside Word: asks questions about the doc with clickable section citations, rewrites highlighted paragraphs without breaking formatting, leaves tracked changes from comments, summarizes back-and-forth edits.
+
+**Read: a deliberate land grab from code to design to docs.** Claude quietly becoming the OS of knowledge work.
+
+**Top repo: LingBot-Map** — fully open-source 3D reconstruction from RGB video, frame-by-frame. 20 FPS at 518x378, stable over 10K+ frames. Cuts trajectory tracking error 57-75% vs best prior streaming methods. Apache 2.0.
+
+**Other signals:**
+- HyperFrames: open-source motion design videos from 2 prompts.
+- GenericAgent: 3K-line self-evolving agent cuts token use 6x.
+- HauhauCS: uncensored Qwen3.6 35B MoE, zero refusals.
+- Open-source ML framework with custom CUDA kernels hits 3x throughput.

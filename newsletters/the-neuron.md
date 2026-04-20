@@ -1,44 +1,45 @@
 ---
 newsletter: The Neuron
 sender: theneuron@newsletter.theneurondaily.com
-subject: 😺 Opus 4.7 just made Claude more expensive
-date: 2026-04-17
-message_id: 19d9b1f13a87f342
+subject: "😺 Opus 4.7 nicknamed \"Gaslightus 4.7\""
+date: 2026-04-20
+message_id: 19daa73fcb835f11
 ---
 
-**Headline: Opus 4.7 dropped. OpenAI overhauled Codex. Same day.**
+**Opening: Honor's Flash humanoid finished the Beijing E-Town Half Marathon in 50m 26s — more than 6 min faster than the human world record. Dry-ice backpack, F1-style pit stops to swap batteries, zero bathroom breaks. Other robots fell apart or exploded at the starting line.**
 
-**Claude Opus 4.7:**
-- Same $5/$25 per MTok pricing as 4.6 — sticker price unchanged.
-- Vision: 69.1% → 82.1% on benchmarks. Images up to 2,576 pixels on long edge (3x prior Claude).
-- SWE-bench Pro: 53.4% → 64.3%. #1 on Vals AI Vibe Code Benchmark at 71%.
-- **Hidden cost:** New tokenizer can use up to 35% more tokens for the same text. Combined with Claude Code's new `xhigh` effort default, Pro and Max users hit weekly caps faster unless they manually dial down. "A friend hit their weekly Max limit in basically one prompt."
-- `xhigh` is the new Claude Code default (use `/effort` to step down).
-- Web app gets adaptive thinking — Claude decides how long to think.
+**Main story: Anthropic shipped a Figma competitor. Reddit verdict: fast, slick, everything looks the same.**
 
-**Launch-day playbooks from Claude Code team (Boris Cherny, Cat Wu):**
-Treat 4.7 like an engineer you're delegating to, not a pair programmer you guide line by line.
-1. Front-load context (goal, constraints, acceptance criteria in turn 1).
-2. Turn on auto mode (Shift+Tab) — safety classifier handles permission prompts, enables parallel Claudes.
-3. Tell it how to verify its own work (2-3x quality multiplier). Put testing workflow in `claude.md` or install `/verify-app` skill.
-4. `xhigh` is the new default — use `/effort` to step down on routine work.
+Context: Canva Create last week, COO Cliff Obrecht told 265M users, "Until now, Canva has been a design platform with AI tools. Now we become an AI platform with design tools." Canva AI 2.0 landed — describe a 12-page Morocco deck in plain English, get editable vectors.
 
-**OpenAI Codex overhaul (same day):** Desktop app = full agent workstation. Mac-level computer use, in-app browser, persistent memory, automations that wake across days, 90+ plugins (Atlassian Rovo, CircleCI, Microsoft Suite). Free with ChatGPT account.
+Same day: Anthropic CPO Mike Krieger quit Figma's board ahead of Anthropic shipping competing design software. Figma's stock dropped.
 
-**CLAUDE.md nesting (AI Skill of the Day):** Taylor Pearson — Claude Code auto-loads CLAUDE.md from every parent directory. Structure: Global (~/CLAUDE.md) → Vault folder → Business folder → Project folder. Claude walks up the tree loading all four into first message. Run a `/wrap` routine end-of-session to update relevant CLAUDE.md files. Starter repo: `claudesidian`.
+**Claude Design (launched Friday, powered by Opus 4.7):**
+- Available at claude.ai/design for Pro, Max, Team, Enterprise.
+- Reads your codebase to build persistent design system.
+- Captures elements from any live site.
+- Packages finished designs as handoff bundle for Claude Code.
+- Exports to Canva, PDF, PPTX, HTML, or private company URL.
+- Adobe, Wix, Figma stocks all dropped on news.
 
-**Other beats:**
-- Anthropic CPO Mike Krieger resigned from Figma's board same day reports surfaced Anthropic is shipping design software.
-- Canva 2.0: rebranded as "an AI platform with design tools" at $42B IPO test.
-- Qwen3.6-35B-A3B (35B sparse, 3B active) rivals Claude Sonnet 4.5 on vision. Simon Willison's laptop-local version drew a better pelican than Opus 4.7.
-- Factory raised $150M from Khosla at $1.5B valuation for autonomous coding agents that switch between models by task complexity; Keith Rabois joined the board.
-- OpenAI's chief economist published AI Jobs Transition Framework: 18% of 900+ occupations face higher near-term automation risk, 24% reorganize, 12% grow, 46% see less change.
-- OpenAI launched GPT-Rosalind (life-sciences model) with Moderna, Amgen, Allen Institute, Thermo Fisher.
-- White House preparing to give federal agencies access to Anthropic Mythos.
-- Perplexity launched Personal Computer — Mac app reads/writes local files, drives iMessage, Mail, Calendar.
+**Early wins:** Ran Segall built a homeschooling app "10x better than Lovable or Replit." Jerrod Lew assembled personal dashboard OS in 2 prompts. Anthropic designer Ryan Mather shipped a 7-tip guide. Canva's CEO endorsed the integration.
 
-**Big read — Sequoia: "Services: The New Software":** Next $1T company sells the work, not the software. Autopilot opportunities mapped: insurance ($140-200B), accounting ($50-80B), tax advisory ($30-35B), recruitment ($200B+).
+**r/ClaudeAI verdict — "resounding meh":**
+- Every generated app looks identical — serif font, blinking status dot, colored accent bars, "container soup" of pills and cards.
+- Claude Design pulls from Claude's built-in frontend-design skill with default presets.
+- "Screams I just used one Claude prompt" unless you upload reference screenshots or design tokens.
+- 2-3 full prompts can exhaust weekly Pro limits — tracks with broader compute-rationing story.
 
-**Amazon AI agent canceled a webcomic creator's 15-year account + Prime + income from self-published books. No flag, no appeal, no human.** Another creator Tom Ray lost his per-page comics catalog back to 2018. "When an 800-pound gorilla outsources due process to a moderation LLM, losing one platform can mean losing a life's work."
+**The bigger issue — "Gaslightus 4.7":** r/ClaudeCode backlash thread (1.7K upvotes) reports Opus 4.7 inventing files, defending hallucinated test results across 10 turns, obsessively checking benign PowerPoint templates for malware. One user's 17/29 eval stayed stuck while Opus kept inventing fresh reasons it was right.
 
-**Takeaway:** Opus 4.7 is a better model AND a more expensive one, even with unchanged sticker prices. The people who get the most out of it follow the playbook. The rest pay the tokenizer tax.
+**Take:** Same opinionated defaults baked into both the design tool and the model. This is Anthropic, the most opinionated AI company out there. Expect model fixes ASAP. If not, revamped Codex could clean house with Claude's remaining devoted devs.
+
+**Fix for Claude Design aesthetic:** Install `ui-ux-pro-max` community skill (55K+ GitHub stars). Adds 50+ styles, 161 color palettes, 57 font pairings, 99 UX guidelines matched to 161 product types.
+
+**Around the horn:**
+- Sakana Digital Ecosystems — browser artificial-life playground.
+- Three senior OpenAI execs (Bill Peebles/Sora, Kevin Weil/Science, Srinivas Narayanan/B2B Apps) announced pre-IPO departures ("Liberation Day").
+- Google in talks with Marvell on two new AI chips — memory processing unit for TPUs and new inference-focused TPU.
+- GLM Coding Plan — $18/mo alternative to Claude Code (GLM-5.1 + GLM-5-Turbo across 20+ coding agents).
+- rtrvr.ai AI Subroutines — record a browser task once, replay as deterministic JavaScript, skip LLM calls.
+- isitagentready.com — scans your site for agent readiness (robots.txt, sitemap, MCP, Agent Skills, OAuth).

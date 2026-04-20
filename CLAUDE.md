@@ -21,21 +21,10 @@ ideabank.json       # Post ideas with used/unused tracking. Draw from unused ide
 drafts/
   YYYY-MM-DD.md  # One file per day, written by the agent after post generation
 
-evals/
-  README.md                       # How to run, what each task tests
-  golden-examples.md              # Engagement-pattern reference set (LinkedIn + X)
-  social-post-quality/
-    suite.yaml                    # Eval suite config (model, trial count)
-    tasks/                        # linkedin_style, x_style, voice_quality, pillar_alignment, competitor_filter
-evals-tools/                      # Portable eval framework — runner, graders, templates
-
 .claude/
   settings.json          # Registers the SessionStart hook
   hooks/session-start.sh # Creates drafts/ dir in remote Claude Code sessions
-  commands/eval.md       # Symlink to evals-tools/commands/eval.md — enables /eval slash command
 ```
-
-**Evals:** Run `bash evals-tools/lib/runner.sh evals/social-post-quality/suite.yaml` (or `/eval evals/social-post-quality/suite.yaml`) to validate the post-generation prompt against Titus's style and voice rules. Results land in `evals-tools/results/<run-id>/summary.md`. Requires `yq` and `jq` (`brew install yq jq`).
 
 **MCP dependency:** The workflow requires the Civic MCP server (profile: `social-media-toolkit`) for Gmail search/fetch and Twitter post tools. Without it, Steps 1-3 and any posting steps cannot run.
 
@@ -44,6 +33,11 @@ evals-tools/                      # Portable eval framework — runner, graders,
 - Step 3 content update (new issues only): `mcp__civic__google-gmail-get_gmail_messages_content_batch`
 
 **No commands to run.** There is no `npm install`, no lint, no test suite. The only "execution" is Claude running the workflow below.
+
+**Model selection:**
+- **Newsletter cache updates (Step 3, and Step 5 if triggered)** run on **Sonnet** via a delegated subagent (`Agent` tool, `subagent_type: general-purpose`, `model: sonnet`). Gmail metadata diffing and newsletter summarization are routine and cheaper on Sonnet.
+- **Post generation and evaluation (Steps 7-10)** run on **Opus** in the main session. Voice, hook selection, idea-bank judgment, and self-evaluation need the stronger model.
+- If the main session is already on Sonnet when post writing starts, tell Titus to `/model opus` before Step 8.
 
 ---
 
@@ -106,20 +100,25 @@ Ask Titus: "How did yesterday's post perform?" Request:
 
 Use the answer to inform tone, angle, or topic emphasis for today's post. If the audience breakdown shows a skew (e.g. BD leaders vs. founders), lean into the angle that resonates with that cohort. If Titus says to skip or has no data, proceed.
 
-### Step 3 — Update the newsletter cache
-Read all files in `newsletters/`. Each file has frontmatter with `sender`, `date`, and `message_id`.
+### Step 3 — Update the newsletter cache (delegate to Sonnet)
 
-Search Gmail **metadata only** (`format: metadata`) using the pre-selected sender addresses from `newsletter_list.md`:
-```
-from:(sender1 OR sender2 OR ...) newer_than:7d
-```
-Fetch up to 27 results.
+Delegate this step to a Sonnet subagent. Call the `Agent` tool with `subagent_type: general-purpose`, `model: sonnet`, and a self-contained prompt that instructs the subagent to:
 
-For each result: compare the Gmail message date to the `date` in the corresponding `newsletters/{slug}.md` file.
-- **Same message_id or older date** -> already cached, skip
-- **Newer date** -> fetch full content for that message, update the newsletter file
+1. Read all files in `newsletters/` and collect each file's frontmatter (`sender`, `date`, `message_id`).
+2. Read `newsletter_list.md` for the pre-selected sender addresses.
+3. Search Gmail **metadata only** (`format: metadata`) via `mcp__civic__google-gmail-search_gmail_messages`:
+   ```
+   from:(sender1 OR sender2 OR ...) newer_than:7d
+   ```
+   Fetch up to 27 results.
+4. For each result, compare the Gmail message date to the `date` in the corresponding `newsletters/{slug}.md`:
+   - **Same message_id or older date** -> already cached, skip.
+   - **Newer date** -> queue for full-content fetch.
+5. Batch-fetch full content for queued senders only via `mcp__civic__google-gmail-get_gmail_messages_content_batch`. On most days this is 0-8 fetches, not 25+.
+6. Rewrite each updated `newsletters/{slug}.md` preserving the file format below. Summaries 200-400 words: concrete data points, quotes, named examples, companies/products/people mentioned, flag competitor mentions (see `config/competitors.md`).
+7. Return a short report: list of files updated, skipped senders with no new issue, any senders that errored.
 
-Only fetch full content for senders with a genuinely newer issue. On most days this will be 0-8 fetches instead of 25+.
+Do not return full newsletter bodies in the subagent report — the main session will read the updated files directly in Step 4.
 
 **Newsletter file format** (preserve when updating):
 ```
@@ -156,7 +155,7 @@ Read all `newsletters/` files. Then:
 ### Step 5 — Fetch full content (if needed)
 If Step 3 already updated the cache with today's content, no additional fetches needed.
 
-If any of the top 6 newsletters have stale cache (older than 24 hours), fetch their latest full content using the Civic Gmail batch content tool and update the cache files.
+If any of the top 6 newsletters have stale cache (older than 24 hours), delegate the refresh to a Sonnet subagent the same way as Step 3 (restricted to the stale slugs) rather than fetching from the main Opus session.
 
 ### Step 6 — Filter competitors
 Do NOT build the post around content that primarily promotes Civic competitors.
@@ -183,7 +182,9 @@ Use the X search results to:
 
 Do NOT build the post around a single tweet. The newsletters remain the primary source; X posts add texture and timeliness.
 
-### Step 8 — Generate the post
+### Step 8 — Generate the post (Opus)
+Post writing, hook selection, and self-evaluation run on Opus in the main session. If you are on Sonnet at this point, ask Titus to `/model opus` before drafting.
+
 Write two platform-specific versions following the style guide in `config/style.md`.
 
 **Both versions must:**
@@ -275,15 +276,6 @@ X: [recommended window in PT]
 - [newsletter subject 2]
 - ...
 ```
-
-### Step 11 — Validate with evals
-After all drafts in the batch are saved, run deterministic style checks against each saved draft's LinkedIn body (word count 200-350, no em dashes, no hashtags, no banned openings) and X body (400-600 chars, @handle present, multi-line). Flag any violations and revise before showing to Titus.
-
-Once per batch (not per post), run the full eval suite as a config drift check:
-```
-bash evals-tools/lib/runner.sh evals/social-post-quality/suite.yaml
-```
-This generates synthetic posts against the style/pillars config and grades them — it does not grade the saved drafts directly. Use it to catch prompt/config regressions. If any non-draft-specific task fails (voice_quality, pillar_alignment, x_style), surface the failure and the transcript path to Titus so the config can be tightened.
 
 ---
 

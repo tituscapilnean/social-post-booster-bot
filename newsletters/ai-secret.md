@@ -1,17 +1,29 @@
 ---
 newsletter: AI Secret
 sender: newsletter@aisecret.us
-subject: "Swallow Everything"
-date: 2026-04-14
-message_id: 19d8b81a6dcb9924
+subject: "🛎️ Musk Thinks AGI Is Brute Force"
+date: 2026-04-20
+message_id: 19daa65ea8db5402
 ---
 
-**Anthropic tries to swallow everything at once** — Aggressive release cycle pushing Claude from a model to a full-stack platform across legal, finance, security, automation, and developer tools. Leaked interface shows a Lovable-like builder inside Claude — now moving to absorb the entire app creation layer. Collapse of application layers built on top of models; no-code tools, automation platforms, vertical SaaS lose reason to exist as Claude absorbs their functions. But every added capability compounds compute load. Risk isn't competition, it's physics: if compute can't keep up, ends in choking, not dominance.
+**Thesis: AI race looks less like software and more like heavy industry.**
 
-**Linux gives in to AI code** — Linux kernel maintainers set formal rules for AI-generated code. Tools like Copilot/Claude are allowed but can't sign contributions. Devs must disclose AI assistance using "Assisted-by" tag; all legal/security/quality responsibility stays with the human submitter. Key tension: AI is flooding the pipeline with patches and security reports, increasing volume fast. Maintainers review more code than ever while trusting none of its origin.
+**Musk's AGI = brute force:** Grok 4.4 early May, Grok 4.5 end of month, Grok 5 already training. Colossus reportedly uses 550,000+ GPUs and ~2 GW of electricity (enough for a city of 1.5M people). OpenAI and Anthropic spending heavily too; nobody else scaling this aggressively.
 
-**OpenAI turns toward enterprise agents** — Internal memo: shift from consumer momentum to enterprise dominance. Focus on agents, full-stack products, deployment inside real workflows. Frames competition with Anthropic as a platform war, not a model race. But OpenAI was built on ToC speed, viral growth, lightweight distribution. Enterprise is the opposite: long sales cycles, compliance, integration pain, constant support. Investors pushing back — company has rewritten roadmap twice in six months.
+**Claude as corporate guillotine:** A fintech with 60+ employees woke up to find every Claude account dead at once. Automated email, Google form, no human explanation. Entire company lost access to coding, support, analysis, internal workflows because one provider decided something "looked suspicious." 15 hours later accounts came back. Anthropic never explained.
 
-**Adobe reduced to data plumbing** — Tesco partnership: Clubcard data from 24M UK households + Adobe's enterprise stack for real-time personalization. Adobe's once-core creative tools losing ground; leaning on legacy data infrastructure to stay relevant. No longer shaping how things are made, just routing data so others decide what gets shown and sold.
+Takeaway: Claude is starting to behave less like enterprise software and more like a corporate guillotine. Build workflows around it, connect docs, train staff, wire operations — then wait for one invisible moderation trigger to erase everything. No hotline, no account manager, no appeal process. "Too unstable to trust as a core business layer."
 
-**Other:** OpenAI acquired AI finance startup Hiro (acquihire). Uber+Nuro employee testing premium robotaxi in SF. Stanford: widening gap between AI experts and public sentiment. Vercel riding AI-generated-apps surge toward IPO readiness. OpenAI expanding London despite pausing UK infra. USDA pushing Grok through FedRAMP.
+**DeepSeek finally needs money:** Reportedly raising at least $300M at $10B+ valuation. V4 delayed multiple times. Rumors that distillation targets from OpenAI/Anthropic have become harder to access. Company built reputation on staying independent and refusing investor pressure. Imitation-only shortcut is breaking; V4 now has to prove the company can build a frontier model with its own ideas.
+
+**MiniMax open-source trap:** Changed license on M2.7 after release. Weights still downloadable but commercial use needs written approval. Some deployments must say "Built with MiniMax M2.7." MiniMax kept calling it "Modified-MIT" (MIT explicitly allows unrestricted commercial use). Developers called it bait-and-switch. "Stops being open source once you need lawyers, approvals, and branding before shipping."
+
+**Daily TL;DR:**
+- Anthropic Claude Design dropped, Adobe/Figma shares down.
+- OpenAI testing ChatGPT tracking pixel to measure conversions (sign-ups, purchases, subs) as it expands ad infra.
+- Google Gemini Notebooks expanded to free users.
+- Netflix plans vertical video feed and broader AI across recommendations, content creation, ads.
+- Cerebras filed for IPO; mid-May target after AWS and OpenAI deals.
+- Sam Altman-backed World expanding human verification into Tinder, ticketing, Zoom, AI agents to prove real people behind online activity.
+- Cursor in talks to raise $2B+ at $50B valuation.
+- Vercel hacked via compromised third-party AI tool Google OAuth integration; internal and customer data exposed.

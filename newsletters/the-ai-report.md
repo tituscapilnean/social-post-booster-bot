@@ -1,34 +1,27 @@
 ---
 newsletter: The AI Report
 sender: theaireport@mail.beehiiv.com
-subject: ⚡️ Anthropic drops Opus 4.7
-date: 2026-04-17
-message_id: 19d9b1e0bb1f98b0
+subject: "⚡️ NSA taps Anthropic despite ban"
+date: 2026-04-20
+message_id: 19daa93dd35d21b0
 ---
 
-**Anthropic releases Claude Opus 4.7** — flagship model, outperforms 4.6 on advanced software engineering, especially the hardest coding tasks. Available: Claude products, API, Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry.
+**NSA is using Anthropic's Mythos Preview** despite the Pentagon formally labeling Anthropic a "supply chain risk" in February (per Axios, two sources with direct knowledge).
 
-**Key points:**
-- Users report handing off their hardest coding work with confidence; model can verify its own outputs.
-- Vision: accepts images up to 2,576 px on long edge (3.75 MP), more than 3x prior Claude.
-- New safeguards automatically detect and block prohibited cybersecurity use requests (follows Project Glasswing on AI cyber risks).
+- Anthropic restricted Mythos to ~40 orgs, deeming offensive cyber capabilities "too dangerous" for wider release. NSA is among unnamed agencies with access.
+- Pentagon-Anthropic breakdown came during contract renegotiations. Pentagon wanted Claude for "all lawful purposes"; Anthropic refused to support mass surveillance or autonomous weapons.
+- Anthropic CEO Dario Amodei met with WH Chief of Staff Susie Wiles and Treasury Secretary Scott Bessent Friday; called productive.
 
-**Relevance:** Same pricing ($5/$25 per MTok). Improved instruction-following + higher-resolution vision = new use cases for computer-use agents + complex document processing. Security pros can apply to Anthropic's Cyber Verification Program for legit pentesting/red-teaming.
+**Policy corner:** Trump admin blocks state AI child-safety bills via federal preemption threats. Utah's Republican-backed bill died; similar stalled in Louisiana, Missouri. 1,000+ state AI bills pending.
 
-**Podcast feature:** "$70K/Month by Selling to AI Agents Instead of Humans" — Andrew Warner.
+**The Money: Developer tooling at infrastructure-scale valuations.**
+- **Loop** ($95M Series C, supply chain AI harness) — Valor, 8VC, Founders Fund, Index, JPMorgan Growth.
+- **Cursor** (Series D, $2B at $50B+ valuation, jumped from $29.3B in 5 months) — a16z co-lead, Nvidia, Thrive.
 
-**Business briefing:** Cockroach Labs ($5B valuation distributed SQL) was burning 14 weeks of recruiter capacity annually on manual note-taking. Deployed Metaview (AI-powered interview transcription) = 70 working days saved annually, standardized documentation, higher candidate engagement.
+Signal: capital flowing to agents automating knowledge work at scale, not just enhancing it. Investors pricing defensibility around domain depth and user lock-in, not model superiority.
 
-**Policy corner:** Illinois now requires explicit consent before using AI to score video job interviews. Applies to all Illinois-based applicants regardless of company HQ.
-
-**AI News:**
-- AIQA Global launched first independent AI governance rating system. AIQ score measures enterprise AI governance across 250 data points on 0-200 scale. Arriving as EU AI Act and Colorado AI Act deadlines converge (August/June 2026).
-- DeepL released voice-to-voice translation suite.
-- OpenAI business accounts now 40% of revenue (up from 20% in 2024). Deprioritizing consumer products like Sora to compete with Anthropic enterprise dominance.
-- Postman × Microsoft: expanded AI model choice, unified API governance.
-
-**The Money:**
-- Fluidstack (Series B+, $1B): AI-optimized data centers for Anthropic, Meta. Valuation jumped $7.5B → $18B in four months. Jane Street lead.
-- Accel Leaders Fund IV: $4B late-stage fund, averaging $200M checks across 20+ companies in AI hardware, robotics, defense tech, data centers.
-
-**Signal:** Smart money betting AI's constraint isn't algorithmic — it's access to purpose-built compute. Infra operators with customer lock-in will command premium multiples through 2027.
+**AI news:**
+- Atlassian begins default data collection Aug 17, 2026 to train Rovo AI. 300K customers affected.
+- Meta targets 8,000 layoffs May 20 (10% of workforce) reorganizing into AI-focused "pods" under Chief AI Officer Alexandr Wang's Superintelligence Labs. $135B redirected to AI infra.
+- Gemini app launches native on macOS (macOS 15+) with screen-sharing and Option+Space shortcut.
+- Walmart + OpenAI: direct purchases through ChatGPT this fall via new "Sparky" AI assistant and Instant Checkout. "Agentic commerce."

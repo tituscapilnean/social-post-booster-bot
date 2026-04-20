@@ -195,5 +195,14 @@
     "angle": "Infrastructure thesis. Directly aligned with Nate Jones's 'memory replaced the model as the moat' framing and the Letta/Ramya Chinnadurai X-timeline conversation on memory portability. Civic-adjacent at the gateway/context layer.",
     "CTA": "Ask: if your provider disappeared tomorrow, how much of your agent's working memory could you take with you?",
     "used": false
+  },
+  {
+    "rank": 25,
+    "hook": "If an agent can't sign up for your product, you don't exist anymore.",
+    "thesis": "Agents are starting to act as the user. Brian Scanlan at Intercom shipped a CLI that lets an agent autonomously sign up for Intercom, verify its own email via Gmail, and complete installation with no human in the loop. Shopify's AI Toolkit writes directly to 5.6M live stores through MCP with no draft step. X cut the cost of reading owned data through its API 5x and is actively recruiting agent builders. isitagentready.com grades a domain on robots.txt, sitemap, MCP endpoints, Agent Skills, and OAuth readiness. The acquisition funnel is now a headless machine interface, and the 'forget it' button is one keystroke away.",
+    "angle": "Adjacent-sell for Civic's MCP gateway positioning. Makes agent-readiness concrete and product-team actionable. Good follow-ups: per-product agent-readiness audits, auth patterns for headless clients, MCP-native vs. scraping-based onboarding.",
+    "CTA": "Ask: what is the first thing an agent would fail at on your product today?",
+    "used": true,
+    "used_date": "2026-04-20"
   }
 ]
