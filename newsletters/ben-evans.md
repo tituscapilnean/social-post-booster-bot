@@ -1,25 +1,33 @@
 ---
 newsletter: Benedict Evans
 sender: list@ben-evans.com
-subject: "Benedict's Newsletter: No. 638"
-date: 2026-04-14
-message_id: 19d8c5b0c5162803
+subject: "Benedict's Newsletter: No. 639"
+date: 2026-04-21
+message_id: 19db05a792e6d98d
 ---
 
-**Anthropic's Mythos (security)** — Found a 27-year-old exploit in FreeBSD plus bugs across widely deployed software. Not public because of weaponization risk. Partnership project "Glasswing" launched with major tech companies to fix systems. Evans notes the irony: DoD calls it a supply chain threat while Anthropic claims capability to hack anything on Earth.
+Strategic analysis of AI market dynamics, Anthropic's surge pricing problem, and agentic commerce.
 
-**Anthropic revenue** — Annualized revenue now $30bn (past-4-weeks × 13), up from $9bn end of Dec 2025, $14bn Feb, $19bn March. Monthly revenue: ~$75m early 2025 → ~$2.5bn last month. Almost all is software development — agentic coding consumes vast tokens that devs are willing to pay for given productivity gains. Inference is profitable; training next model is a money pit. Each foundation model only stays relevant 6–9 months.
+**Anthropic's Capacity Crunch — The Mobile Data Analogy**
+Anthropic is experiencing infrastructure strain from agentic coding adoption: outages increasing, users reporting limited responses, Claude Code being cut off, price increases rolling out. Evans frames it as the mobile data crisis of the late 2000s when iPhone's flat rate data swamped AT&T's network. Natural end-state: segmented flat-rate bundles. Anthropic invested least in capacity of all big labs (partly reflecting lack of a consumer story) — now agentic coding finding massive product-market fit is making that a real problem. Long-term speculation: token budgets may rise to match headcount budgets.
 
-**Revenue recognition asymmetry** — OpenAI records only its cut when models are resold by cloud partners (last public claim: ~$24–25bn annualized). Anthropic records total sale and deducts cloud share as cost. So the comparison isn't clean — but Ramp data suggests Anthropic's corporate revenue will overtake OpenAI's in next month or two.
+**OpenAI's Strategic Problem**
+OpenAI lacks unique tech. Has big user base but limited engagement and stickiness, no network effect. Incumbents have matched the tech and are leveraging product and distribution. Most future value will come from new experiences that haven't been invented yet. Evans asks: what's the plan?
 
-**Tokenmaxxing** — Meta engineer burned 281 billion tokens in 20 days (possible cost: hundreds of thousands to millions). Meta's internal leaderboard total: 60 trillion tokens over 20 days. Board was taken down after it was reported. Visa: employees use ~2tr tokens/month. Evans: "like showing off your mobile data bill at vastly greater scale — performative but also about how fast you are adopting something transforming your industry."
+**Meta Manus — China Geopolitical Risk**
+China's reaction to Meta's acquisition of Manus (agentic AI platform) is escalating: orders reportedly from the top, multiple ministries involved. Moving co-founders to Singapore to circumvent Chinese limits on foreign acquisitions may not have been as clever as it seemed, especially in a strategic sector. Signals: China is only investable if you can get a domestic exit.
 
-**Meta Muse Spark** — First model from the new AI lab built from scratch for billions. Pretty good — not league-topping but in the pack with Anthropic/Google/OpenAI. Tribute to Zuck's management; rebuke to Apple, Amazon, Microsoft who failed similar reboots.
+**Allbirds as AI Bubble Barometer**
+Allbirds (effectively just a cash shell after selling shoe business for pennies) announced "something vague in AI data centres" and stock went up 5x. Evans: "That's the kind of thing that happens in bubbles, but it also reflects a basic shortage of ways for public markets investors to get a clean investment in AI." Shortage of pure-play public AI vehicles inflating any adjacent name.
 
-**PE/AI rollups** — Anthropic in talks with PE funds to set up a consultancy helping portfolio companies deploy AI; Anthropic investing $200m of a planned $1bn raise. Irony: the tech that's supposed to destroy consultants turns out to need a lot of consulting. Jeff Bezos's new PE+AI vehicle hired the last remaining co-founder out of xAI.
+**Nvidia and Export Controls**
+Jensen Huang interview: Chinese chips aren't as good as Nvidia's, but China has abundant cheap energy and can use more chips to get the same result. Withholding Nvidia chips doesn't slow Chinese AI — it just cuts off the market for US companies and pushes China to build its own tech stack.
 
-**Other signals:**
-- a16z data: ~2/3 of enterprise AI adoption is coding
-- US ambulance-chasing lawyers can't advertise on Meta (layers of irony)
-- Chinese open-source models going closed as they chase revenue
-- Cost per token halving every 3 months; model relevance window ~6–9 months
+**Uber Returns to Robotics — Portfolio Model**
+Uber committed $10B over the next few years toward vehicle purchases and equity stakes across a dozen+ robotics/AV tech companies (nearly $10B FCF last year). Portfolio model, not building in-house this time. Waymo is "kind of working."
+
+**Mondelez on Agentic Commerce**
+Mondelez planning for agentic commerce: primarily best practice for SEO. Signal: major CPG brands are thinking about how AI agents will discover and recommend products, not just how human search works.
+
+**Agentic Commerce Data Point**
+IDC research cited: companies integrating agents with collaboration systems see returns of 33 hours per person per week. Early adopters creating market advantages that make it harder for competitors to catch up.

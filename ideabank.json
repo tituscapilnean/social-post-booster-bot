@@ -63,7 +63,8 @@
     "thesis": "A big part of AI value comes from getting the right data into context, not just from designing a slick interface. The tools that win may be the ones that make data accessible, usable, and connected.",
     "angle": "Infrastructure and product strategy take. Smart and slightly under-discussed.",
     "CTA": "Ask: Do you think the real moat in AI products is the model, the interface, or the data layer?",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-21"
   },
   {
     "rank": 9,

@@ -1,35 +1,30 @@
 ---
 newsletter: AgentBrief
 sender: news@agentcommunity.org
-subject: "[agentBrief] - The Era of Execution Agents"
-date: 2026-04-20
-message_id: 19dab4ece289a389
+subject: "[agentBrief] - Engineering the Hardened Agent Stack"
+date: 2026-04-21
+message_id: 19db07524a9f5791
 ---
 
-**Thesis: The agentic stack moves from conversation to deterministic execution. Orchestration and memory are the load-bearing layers now; models are primitives.**
+Focus on the maturation of agentic infrastructure from experimental to production-hardened systems.
 
-**Advisor / tiered routing is now table stakes.**
-- Anthropic's advisor tool (`anthropic-beta: advisor-tool-2026-03-01`) is in public beta. Executors like Sonnet or Haiku consult Opus for strategic guidance; advisor generates 400-700 tokens of guidance per call, focusing reasoning on decision points.
-- Sonnet + Opus scored 74.8% on SWE-bench Multilingual (+2.7pp) while cutting cost 11.9% per task.
-- Haiku + Opus hit 41.2% on BrowseComp at 85% lower cost than Sonnet solo.
-- Early adopters flag usage limits as production blocker despite validated cascade research.
+**Anthropic's Advisor Tool — Tiered Reasoning in Production**
+Anthropic's new public beta introduces tiered reasoning: executor models (Sonnet or Haiku) consult Opus mid-task via a single API call using `type: advisor_20260301`. Results: Sonnet + Opus pairing scored 74.8% on SWE-bench Multilingual while cutting cost 11.9% per task vs solo Sonnet. Haiku + Opus hit 41.2% on BrowseComp at 85% lower cost than running Sonnet alone. The advisor generates 400-700 token plans without full tool calls, keeping overhead at executor rates. Community flags Claude's rate limits as a bottleneck for high-frequency calls.
 
-**Hermes Agent crosses 100K GitHub stars in 53 days** (up from 72K last week).
-- 3-layer memory stack: curated facts, session search, procedural skills. Self-improves by writing its own skills.
-- 3,575-character memory budget via compression. Outperforms Claude Code on 89 real-world tasks.
-- v0.10 ships 118 native skills, zero CVEs (OpenClaw has nine).
-- `ollama launch hermes` on Ollama 0.21.
+**Shopify MCP — Write Access to 5.6M Stores**
+Shopify integrated MCP to give autonomous agents direct write access to live store backends across 5.6M+ stores handling $378B aggregate GMV. Developers define agent capabilities in SKILL.md files as transparent manifests for API executions. Claude Code already triggers 30% of Vercel deployments and accounts for 4% of public GitHub commits. Critics flag lack of native "undo" modes or sandboxing as risk for hallucinated bulk pricing errors or inventory wipes.
 
-**Shopify AI Toolkit gives agents write access to 5.6M stores** via MCP. Execution commits immediately on live stores — no draft step. ~16 agent skills covering Admin API, GraphQL validation, code search. Plugs into Cursor, Claude Code, Gemini CLI, VS Code.
+**Hermes Agent — Open-Source Challenger to Claude Code**
+Nous Research's Hermes Agent topped GitHub trending with 100,000+ stars in 53 days. Architecture: uses persistent markdown files for session history to avoid context window bloat. Prioritizes identity and memory to enable self-improvement through skill generation.
 
-**Universal Skill Marketplace hits critical mass.** 5,200+ skills curated for OpenClaw. Modular agent interfaces as the new composable primitive. Advocates warn: marketplace vetting is a production risk.
+**MCP Supply Chain Security**
+1,184 malicious packages found in the MCP supply chain. Defensive tools emerging: `agent-bom` open-source scanner and `nukonpi-detect` (1ms latency, offline prompt injection detection). Memcord v3.4.0 adds safety hints. HyperspaceDB v3.0 claims 30-40% vector search precision boost via hyperbolic geometry. EvalCI provides deterministic testing gates replacing vibe-based evaluations.
 
-**MCP evolves to standardize universal skill delivery.** New `skills://` URI pattern aims to bridge compatibility between Claude and Cursor. Secure injection without prompt-injection risks of system prompts.
+**MCP Skills Standardization**
+Proposal for `skills://` URI to serve agent skills directly in MCP resources for portability across clients. MCP co-creator confirmed plans for an official extension as a secure alternative to system prompts. Builders expect standardization to reduce ecosystem fragmentation hindering agent deployment.
 
-**Execution benchmarks:** OpenAI Operator hits 87% on WebVoyager, 32.6% on OSWorld (double Anthropic's previous 14.9%). Browser Use Cloud 78% reliability. Claude 3.5 Sonnet crossed 60% "utility threshold" at 72.5% OSWorld.
+**Model Notes**
+GPT-5.4 (Mythos): excels at deep planning but "overthinks" simple tasks; API costs $30/$180 limiting it to supervisor roles. GLM-5.1 released with performance boost for Droid agent framework. DeepSeek reportedly preparing "Expert" models for dedicated paid deployments. Kimi K2.6 benchmark: 0.684 on ClawMark OpenClaw (narrowly beating Gemini 3.1 Pro's 0.682), touted as 76% cheaper than Claude for coding tasks.
 
-**MCP moved to Linux Foundation** with Google and Microsoft backing. 440 servers, 930K GitHub stars. OWASP now lists "Insecure Agentic Delegation" as critical 2026 risk because MCP gateways are centralized chokepoints.
-
-**Industry:** Claude Code estimated to generate 4% of all public GitHub commits. Amazon's Trainium2 co-designed with Anthropic for RL-heavy reasoning.
-
-**For builders:** Focus on the orchestration layer and memory stack. Models are primitives now; logic lives in routing, skill delivery, and state management.
+**Infrastructure**
+Jido agents in Elixir require only 2MB heap space for high-concurrency tasks. Anthropic's move to Amazon Trainium2 driven by memory bandwidth needs for RL models. EvalCI replaces vibe-based testing with deterministic gates. HyperspaceDB claims 30-40% vector precision boost.

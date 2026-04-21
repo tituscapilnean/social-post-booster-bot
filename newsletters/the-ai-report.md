@@ -1,27 +1,26 @@
 ---
 newsletter: The AI Report
 sender: theaireport@mail.beehiiv.com
-subject: "⚡️ NSA taps Anthropic despite ban"
-date: 2026-04-20
-message_id: 19daa93dd35d21b0
+subject: "⚡️ Claude Design takes on Figma"
+date: 2026-04-21
+message_id: 19dafb91c6a08bb6
 ---
 
-**NSA is using Anthropic's Mythos Preview** despite the Pentagon formally labeling Anthropic a "supply chain risk" in February (per Axios, two sources with direct knowledge).
+Claude's expanding product suite, EU/US AI regulation divergence, and AI funding round analysis.
 
-- Anthropic restricted Mythos to ~40 orgs, deeming offensive cyber capabilities "too dangerous" for wider release. NSA is among unnamed agencies with access.
-- Pentagon-Anthropic breakdown came during contract renegotiations. Pentagon wanted Claude for "all lawful purposes"; Anthropic refused to support mass surveillance or autonomous weapons.
-- Anthropic CEO Dario Amodei met with WH Chief of Staff Susie Wiles and Treasury Secretary Scott Bessent Friday; called productive.
+**Claude Design Takes on Figma**
+Anthropic launched Claude Design — users describe what they need and refine via conversation, inline comments, or direct edits. Powered by Claude Opus 4.7. Rolling out in research preview for Pro, Max, Team, and Enterprise. Key capabilities: teams can apply their own design system automatically for consistent brand output; use cases include realistic prototypes for user testing, wireframes for developer handoff, pitch decks, marketing collateral, and "frontier design" with voice, video, and 3D. Exports to Canva, PDF, PPTX, or HTML. Claude Design integrates with Claude Code, packaging work into handoff bundles developers can use with a single instruction. Google DeepMind formed a coding strike team (led by Sebastian Borgeaud) specifically targeting Anthropic after Claude's tools outperformed Gemini in internal benchmarks.
 
-**Policy corner:** Trump admin blocks state AI child-safety bills via federal preemption threats. Utah's Republican-backed bill died; similar stalled in Louisiana, Missouri. 1,000+ state AI bills pending.
+**Competing AI Policy Regimes**
+US GSA released AI procurement rules (March 6) requiring systems to remain ideologically neutral. California countered (March 30) requiring vendors to demonstrate safeguards against bias and civil rights protections. Vendors selling to both must now meet opposing requirements. Deadline: California guidelines due by July 30, 2026.
 
-**The Money: Developer tooling at infrastructure-scale valuations.**
-- **Loop** ($95M Series C, supply chain AI harness) — Valor, 8VC, Founders Fund, Index, JPMorgan Growth.
-- **Cursor** (Series D, $2B at $50B+ valuation, jumped from $29.3B in 5 months) — a16z co-lead, Nvidia, Thrive.
+**UK Sovereign AI Fund**
+UK launched $675M sovereign AI fund with capital, GPU access, and fast-track visas to keep AI innovation domestic.
 
-Signal: capital flowing to agents automating knowledge work at scale, not just enhancing it. Investors pricing defensibility around domain depth and user lock-in, not model superiority.
+**Funding Signals — AI as Infrastructure Play**
+- Euclyd and Fractile (early-stage, undisclosed): AI chip architectures targeting efficiency gains vs. Nvidia H100; analog computing and disaggregated memory
+- Sarvam AI (Series B, $320M-$350M at $1.5B valuation): India's localized AI stack for enterprise and public sector in Indic languages; investors include Nvidia, Amazon, HCLTech, Bessemer, Prosperity7, Lightspeed, Khosla
+- Pattern: capital flowing to AI infrastructure that reduces dependency on single vendors or foreign models; sovereign AI and chip diversification plays commanding multiples above pure-play model companies
 
-**AI news:**
-- Atlassian begins default data collection Aug 17, 2026 to train Rovo AI. 300K customers affected.
-- Meta targets 8,000 layoffs May 20 (10% of workforce) reorganizing into AI-focused "pods" under Chief AI Officer Alexandr Wang's Superintelligence Labs. $135B redirected to AI infra.
-- Gemini app launches native on macOS (macOS 15+) with screen-sharing and Option+Space shortcut.
-- Walmart + OpenAI: direct purchases through ChatGPT this fall via new "Sparky" AI assistant and Instant Checkout. "Agentic commerce."
+**AI Business Briefing (E-commerce Case)**
+Mid-market e-commerce brand cut Google Ads spend from $15K to $6K/month (60% reduction) while maintaining revenue using AI campaign management with cross-channel attribution and automated bid optimization every 15 minutes. Conversion rate jumped from 2.1% to 5.4%. ROAS climbed to 6.1x. Key lesson: cross-channel attribution changed everything — Google, Meta, and email were each claiming 100% credit for the same sale. Agentic Analytics Summit (April 29): Brex, Patagonia, Jobber, PURE Insurance sharing how they use semantic layer to ship AI-native analytics that don't hallucinate.

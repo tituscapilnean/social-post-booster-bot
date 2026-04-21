@@ -1,26 +1,32 @@
 ---
 newsletter: The Pragmatic Engineer
 sender: pragmaticengineer@substack.com
-subject: "The impact of AI on software engineers in 2026: key trends"
-date: 2026-04-14
-message_id: 19d8cbecf29ca068
+subject: Learnings from conducting ~1,000 interviews at Amazon
+date: 2026-04-21
+message_id: 19db01857896b769
 ---
 
-Deep-dive analysis of 900+ engineer responses on AI tool usage in 2026.
+Guest post from Steve Huynh (ex-Amazon Principal Engineer, 17 years, ~1,000 interviews including ~600 as Bar Raiser). Focus: behavioral interviews and what drives hiring decisions. Limited AI-agentic signal — primarily career/hiring content.
 
-**Costs:** Tech companies foot the bill for most AI tool usage. Companies commonly pay ~$100–200/month per engineer (Claude Code Max, Cursor, Codex); individuals paying personally stay at ~$20/month or free tiers. ~15% of respondents raise cost concerns.
+**The Core Insight**
+Candidates fail not because they lack technical skill, but because of how they present themselves. "Technical skills are the ante. They get you into the game. But they're not what wins you the hand." The final round figures out whether the team *wants to work with you*, not just if you can do the job.
 
-**Budget strain:** At small/mid-sized companies, leadership is running into much higher bills than engineers expect. A CPTO at a mid-sized company racked up $600/month Cursor bills; now migrating team to Claude Code to cut cost. UK/EU companies push back on $30–50/month spend; US companies more willing to invest first and measure later. Finance teams at sports-tech, fintech cos are getting grumpy about unquantifiable productivity.
+**Preparation Asymmetry**
+Average candidate spends 95% of time on technical prep, 5% on everything else. Returns on technical prep diminish rapidly; returns on behavioral story prep are exponential because almost nobody does it. Ten hours of story prep can completely change outcomes. Technical interviews allow winging via reasoning; behavioral interviews cannot be winged — no hints possible.
 
-**Quote:** *"I cannot see how spend on AI tools is fiscally sustainable... Max 100 with Claude Code is $100/month. A single small task powered by Kimi K2.5 using OpenCode is $5, mostly in input cost. The much more expensive Opus model cannot be sustainable, never mind profitable at these plan costs."* — EU founder.
+**The Four Dimensions That Determine Level**
+1. **Scope**: How many people were affected by your work? (your output → your team → adjacent teams → organization-wide)
+2. **Contribution**: What did you specifically do vs. "we"? (execute assigned → own complete solutions → lead cross-team → create organizational capabilities)
+3. **Impact**: What measurably changed? Connect technical wins to business/user outcomes with numbers
+4. **Difficulty**: Complexity of problems, constraints faced, trade-offs managed. Hard problems solved well beat easy problems with big impact
 
-**Usage limits:** ~30% of respondents hit limits (disruptive, especially in flow); ~20% stay under. Opus eats budgets fastest; common pattern = plan with Opus, switch to Sonnet for execution. When limits hit: switch tools, upgrade plans, or move to API pricing.
+**Key Behavioral Interview Signals Companies Look For**
+- Role fit: how you handle ambiguity, cross-team coordination, rapid iteration
+- Company fit: bias for action, customer obsession, radical transparency — same story sends different signals to different companies
+- Common mismatches: independence vs. collaboration, speed vs. thoroughness, excellence vs. pragmatism, innovation vs. stability, direct vs. diplomatic, data vs. intuition, specialist vs. generalist
 
-**Three archetypes:**
-- **Builders** (care about quality/architecture): Use AI for refactors, migrations, test coverage, "quality-of-life" fixes. DHH example: engineer took P1 request latency from 4ms to <0.5ms over 2 days, 12 PRs, 2,500 lines changed — "explosion of the pie lets us look at problems we'd never have contemplated." Downside: overwhelmed by AI slop from colleagues; more debugging; sense of identity loss from no longer hand-coding.
-- **Shippers** (focus on outcomes): Most enthusiastic about AI. Ship faster but add tech debt faster and risk building the wrong thing.
-- **Coasters** (not great engineers): AI lets them uplevel faster but generates lots of AI slop that frustrates builders.
+**AI Context (from Gergely's note)**
+"Technical interviews are going through a big change, thanks to AI tools: some companies are bringing in new, AI-assisted types of interviews, while others are trying to make 'pre-AI' type interviews work. What doesn't seem to be changing is the second type of interviews: the behavioral ones."
 
-**Role convergence:** Engineers orchestrate and context-switch more; engineering managers can now be more hands-on. Engineer and manager roles becoming more similar. Shift from "how to build" to "what to build."
-
-**AI hype cycle verdict:** Most expect prices to rise. Subsidies keeping things at bay; enterprise plans with vendor lock-in mirror the cloud pricing playbook.
+**Note for Post Generation**
+Minimal AI-agentic signal this issue. The AI note about changing technical interview formats is a data point. Not suitable as primary source. Useful for posts about how AI is changing hiring/talent evaluation if that angle becomes relevant.

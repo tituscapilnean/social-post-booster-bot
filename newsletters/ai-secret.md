@@ -1,29 +1,29 @@
 ---
 newsletter: AI Secret
 sender: newsletter@aisecret.us
-subject: "🛎️ Musk Thinks AGI Is Brute Force"
-date: 2026-04-20
-message_id: 19daa65ea8db5402
+subject: "🛎️ Monkeys Now Roam VR by Thought"
+date: 2026-04-21
+message_id: 19daf8c7601877c1
 ---
 
-**Thesis: AI race looks less like software and more like heavy industry.**
+Mix of neuroscience, Apple leadership change, biotech, and AI music industry disruption.
 
-**Musk's AGI = brute force:** Grok 4.4 early May, Grok 4.5 end of month, Grok 5 already training. Colossus reportedly uses 550,000+ GPUs and ~2 GW of electricity (enough for a city of 1.5M people). OpenAI and Anthropic spending heavily too; nobody else scaling this aggressively.
+**Brain-Computer Interface — VR Navigation by Thought**
+A Science Advances study showed three rhesus monkeys navigating VR worlds using brain signals alone via electrodes implanted in M1, PMd, and PMv motor cortex regions. Free movement in 3D VR space driven only by decoded brain activity — not cursor control. Decoder needed only a short passive training phase before working across tasks. Signal: brain interfaces are transitioning from lab demos to practical control systems, with implications for assistive computing, robotic control, and immersive digital navigation.
 
-**Claude as corporate guillotine:** A fintech with 60+ employees woke up to find every Claude account dead at once. Automated email, Google form, no human explanation. Entire company lost access to coding, support, analysis, internal workflows because one provider decided something "looked suspicious." 15 hours later accounts came back. Anthropic never explained.
+**Apple CEO Transition**
+Tim Cook stepping back as CEO to become Executive Chairman on Sept. 1. John Ternus (SVP Hardware Engineering) takes over. Cook's tenure: Apple value increased ~24x to $4T. Ternus seen as hired to fix Apple's AI lag (Vision Pro flopped, Siri fell behind) rather than protect operational efficiency. Context: Apple reportedly sending hundreds of Siri engineers to AI bootcamp to catch up.
 
-Takeaway: Claude is starting to behave less like enterprise software and more like a corporate guillotine. Build workflows around it, connect docs, train staff, wire operations — then wait for one invisible moderation trigger to erase everything. No hotline, no account manager, no appeal process. "Too unstable to trust as a core business layer."
+**OpenProtein.AI — Democratizing Protein Design**
+OpenProtein.AI (MIT founders Tristan Bepler and Tim Lu) making AI protein design accessible via no-code platform. PoET-2 model reportedly beats much larger systems with less compute. Biology becoming software-like with reusable models, APIs, and iterative workflows. Moat shifting to biological data and model ecosystems rather than wet labs.
 
-**DeepSeek finally needs money:** Reportedly raising at least $300M at $10B+ valuation. V4 delayed multiple times. Rumors that distillation targets from OpenAI/Anthropic have become harder to access. Company built reputation on staying independent and refusing investor pressure. Imitation-only shortcut is breaking; V4 now has to prove the company can build a frontier model with its own ideas.
+**AI Music — Synthetic Artists Top Charts**
+IngaRose's "Celebrate Me" hit No. 1 on global iTunes charts. AI can now generate voice, lyrics, beat, cover art, artist photos, social posts, interviews, and release schedules. Charts filling with disposable synthetic artists; human musicians competing against factories that never sleep.
 
-**MiniMax open-source trap:** Changed license on M2.7 after release. Weights still downloadable but commercial use needs written approval. Some deployments must say "Built with MiniMax M2.7." MiniMax kept calling it "Modified-MIT" (MIT explicitly allows unrestricted commercial use). Developers called it bait-and-switch. "Stops being open source once you need lawyers, approvals, and branding before shipping."
-
-**Daily TL;DR:**
-- Anthropic Claude Design dropped, Adobe/Figma shares down.
-- OpenAI testing ChatGPT tracking pixel to measure conversions (sign-ups, purchases, subs) as it expands ad infra.
-- Google Gemini Notebooks expanded to free users.
-- Netflix plans vertical video feed and broader AI across recommendations, content creation, ads.
-- Cerebras filed for IPO; mid-May target after AWS and OpenAI deals.
-- Sam Altman-backed World expanding human verification into Tinder, ticketing, Zoom, AI agents to prove real people behind online activity.
-- Cursor in talks to raise $2B+ at $50B valuation.
-- Vercel hacked via compromised third-party AI tool Google OAuth integration; internal and customer data exposed.
+**AI Industry Briefs**
+- Anthropic secured $5B additional from Amazon, pledged $100B+ in AWS spending for Trainium capacity
+- NSA using Anthropic's Mythos model for cybersecurity despite Pentagon supply chain risk label
+- Jeff Bezos' Project Prometheus near $10B funding at $38B valuation (engineering/manufacturing AI)
+- Google expanded Gemini in Chrome to Japan, South Korea, Singapore, Australia, and more
+- Adobe launched CX Enterprise AI suite for automated customer marketing workflows
+- Epic allowing Fortnite developers to build AI-powered NPCs (excluding romantic partners or mental health advisors)

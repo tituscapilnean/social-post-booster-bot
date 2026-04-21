@@ -1,32 +1,29 @@
 ---
 newsletter: Nate's Substack
 sender: natesnewsletter@substack.com
-subject: "Your Comprehension Is Worth More Than Your Output Now. Here's How to Make It Visible (Nate's TalentBoard)"
-date: 2026-04-20
-message_id: 19dab0481951a409
+subject: "Opus 4.7 migration: what broke, what it actually costs, and the one pattern that catches what both models miss"
+date: 2026-04-21
+message_id: 19db0292b9dc034a
 ---
 
-**Thesis: In 2026, building more is the wrong optimization. AI already does that. What's scarce is proving you understood what you built — why it works, what would break, what you chose not to do and why.**
+Detailed Opus 4.7 migration analysis from 4 days of production testing vs GPT-5.4, plus Claude Design evaluation.
 
-Production used to signal competence because production was hard. Hard meant effort, effort meant expertise. AI broke that chain. Everything is easy to produce now. What nobody has a reliable system for demonstrating is comprehension.
+**What's Real in Opus 4.7**
+Genuine capability gains in persistence, coding, vision, and knowledge work. But gains are NOT uniform — web research and terminal regressions worth routing around. The model became more literal: inference it previously did automatically (guessing what you meant) is now gone. Fix is clearer prompts, not longer ones.
 
-Not just a junior problem — break is the same at every level:
-- Mid-career PM who can't show what she contributed last year
-- Senior engineer deploying systems he can't fully explain
-- Exec leading AI overhaul she's never tested with her own hands
+**The Tokenizer Tax**
+Bills went up even though sticker price didn't change. Three compounding factors: a tokenizer tax, adaptive thinking overhead, and breaking API changes that compound in ways headline pricing hides. Some workflows now cost measurably more per unit of output.
 
-**The labor-market evidence:**
-- Oracle cut 30,000 jobs via early-morning email and dead badges.
-- Block cut 4,000; Dorsey cited AI tools.
-- Salesforce cut 1,000 across marketing, product, and their own Agentforce AI unit.
-- Per Challenger, AI led all stated reasons for job cuts in March at 25% of total (up from 5% across all of 2025).
+**Backlash and Praise Are Both Describing Real Things**
+People treating this as one story will make the wrong migration call. Some will overpay for work that got cheaper. Others will downgrade away from the one model that actually got the hard stuff right. The combative, more literal behavior and the capability gains are separate engineering choices that shipped in the same release — they have separate fixes.
 
-**The answer (from Nate):**
-1. Comprehension over generation — forced understanding develops taste that survives tech waves.
-2. Explanation as artifact — 4-question template attached to everything you produce so invisible judgment becomes visible.
-3. Transactions over credentials — static resumes are dead signal when AI generates perfect claims in seconds.
-4. Work in the open — build credibility without warm intros or network built on signals no longer carrying weight.
+**Claude Design — The $42 Afternoon**
+Nate spent an afternoon inside Claude Design. The design tool turns brand assets into machine-readable agent instructions. Correction loop reveals where Anthropic actually is vs. where the valuation says they should be. Useful but not fully realized — the feedback loop between intent and output still requires significant human iteration.
 
-Plus: **Nate's TalentBoard** — public profile where your AI projects, explanation artifacts, and proof of understanding live in one place.
+**Three Migration Prompts**
+1. Pre-flight check: flags what breaks when switching from Opus 4.6 to 4.7
+2. Cost estimator: quantifies the tokenizer tax on your specific usage patterns
+3. Peer review workflow builder: adds the reliability layer that catches what both models miss
 
-Closing line: "The people who figure this out first will have an advantage that compounds. The people who keep optimizing output will wonder why nobody notices."
+**Bottom Line for Builders**
+Opus 4.7 is stronger on the hardest work. It's also more expensive per-unit even at the same list price, and more combative on ambiguous instructions. Don't treat migration as a toggle — audit which workloads genuinely need the new capabilities vs. which got cheaper to run on 4.6-class alternatives.
