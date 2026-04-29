@@ -72,7 +72,8 @@
     "thesis": "As agents and automations do more work, pricing software per human seat makes less sense. Usage-based or outcome-based pricing is likely to become a better fit for AI-driven products.",
     "angle": "Bold market prediction. Great for startup and product audiences.",
     "CTA": "Ask: Which pricing model makes the most sense in an agent-driven world: seats, usage, or outcomes?",
-    "used": false
+    "used": true,
+    "used_date": "2026-05-01"
   },
   {
     "rank": 10,
@@ -113,7 +114,8 @@
     "thesis": "Current AI usage is still benefiting from heavily subsidized economics. As true inference costs become more visible, product design, pricing, and adoption patterns may shift dramatically.",
     "angle": "Economic warning with a forward-looking market lens.",
     "CTA": "Ask: What happens to today's AI workflows if model usage becomes 10x more expensive?",
-    "used": false
+    "used": true,
+    "used_date": "2026-05-01"
   },
   {
     "rank": 15,
@@ -162,7 +164,8 @@
     "thesis": "Claude is rapidly absorbing adjacent app-builder surfaces (leaked Lovable-style builder), legal, finance, security, automation, dev tools — collapsing the reason to exist for a large chunk of vertical SaaS and no-code platforms. The binding constraint isn't market share; it's compute. $30B ARR, training next model is a money pit, model relevance window 6-9 months, cost per token halving every 3 months. The question isn't whether Anthropic wins the app layer. It's whether the infra keeps up before the ambition breaks.",
     "angle": "Platform-war thesis aimed at founders building on top of Claude. Forces the question: am I building something Anthropic will ship as a feature in 90 days? Pairs well with idea #15 (lock-in) and idea #14 (inference pricing catches up).",
     "CTA": "Ask: if Claude shipped your product as a native feature next month, what would still be yours?",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-30"
   },
   {
     "rank": 21,
@@ -170,7 +173,8 @@
     "thesis": "Advisor is a taste checkpoint priced into the token bill. Ultraplan is a taste checkpoint held in a browser. Linux accepts AI patches but requires a human signature. MCP gateways are where taste-routing lives at the protocol level. The frontier isn't autonomy — it's deciding where in the call stack a human-or-bigger-model gets consulted, and who pays when they do.",
     "angle": "Infrastructure-layer thesis that reframes the orchestrator pillar. Directly adjacent to Civic's MCP gateway positioning: the value isn't the model, it's the routing policy. Good for follow-ups that go deeper on specific patterns (cascading routers, plan/execute splits, signature requirements).",
     "CTA": "Ask: show me where in your call stack a human (or a bigger model) gets invoked — and what it costs.",
-    "used": false
+    "used": true,
+    "used_date": "2026-04-29"
   },
   {
     "rank": 22,
@@ -205,5 +209,30 @@
     "CTA": "Ask: what is the first thing an agent would fail at on your product today?",
     "used": true,
     "used_date": "2026-04-20"
+  },
+  {
+    "rank": 26,
+    "hook": "Khanmigo failed the way gym memberships fail. Most agents will too.",
+    "thesis": "Khan Academy launched the most-funded AI tutor in history. Sal Khan: 'For a lot of students, it was a non-event.' Only 4.7% of students use Khan Academy as recommended. The 5% problem is not education-specific. Any autonomous agent that requires proactive user engagement hits this ceiling unless it is embedded in a context with external accountability. Builders selling agent-as-product to passive users are about to learn the same lesson.",
+    "angle": "Adoption-ceiling thesis for agent products. Pairs with idea #6 (delayed rework) and #12 (working systems vs demos). Forces the question: where does the accountability structure live that makes the agent get used?",
+    "CTA": "Ask: what forces the user to actually open your agent on day 30?",
+    "used": false
+  },
+  {
+    "rank": 27,
+    "hook": "Every enterprise is about to hire 'agent deployers' before they fire anyone.",
+    "thesis": "Box CEO Aaron Levie this week: enterprises will need agent deployers embedded across teams, people who find workflows where agents replace repetitive labor. Palantir's Karp on the same axis: the surviving skills are vocational expertise and non-playbook 'nonlinear work.' The org chart is about to add a layer between management and the model. Whoever owns the deployment surface (MCP servers, permission graphs, eval harnesses) sells to that role first.",
+    "angle": "Enterprise-org thesis. Useful for B2B founders selling into the agent-deployment buyer. Civic-adjacent: gateway features (per-tool perms, audit, rollback) are exactly what an agent deployer needs to hand to a CISO.",
+    "CTA": "Ask: who owns the agent deployment surface in your org today, and who will own it in 12 months?",
+    "used": false
+  },
+  {
+    "rank": 28,
+    "hook": "OpenAI is becoming Apple. The model layer is now distribution, not capability.",
+    "thesis": "In one week: Microsoft exclusivity ended, AGI clause deleted, $38B AWS deal, Bedrock Managed Agents shipped, and Ming-Chi Kuo confirmed the OpenAI-Qualcomm-MediaTek phone for 2028. OpenAI just secured distribution everywhere a workload runs and is now building the device that captures user intent. The model layer collapses into a control-surface play. Builders shipping on top of an LLM are no longer competing inside an API surface. They are competing against a vertically-integrated stack.",
+    "angle": "Used 2026-04-28; worth re-pulling when the OpenAI device leaks more details or when another lab makes a parallel hardware move.",
+    "CTA": "Ask: where does an OpenAI-controlled device change your roadmap?",
+    "used": true,
+    "used_date": "2026-04-28"
   }
 ]

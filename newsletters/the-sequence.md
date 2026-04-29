@@ -1,27 +1,19 @@
 ---
 newsletter: TheSequence
 sender: thesequence@substack.com
-subject: "The Sequence Knowledge #846: Beyond Transformer: A New Series"
-date: 2026-04-21
-message_id: 19dafb1b6c397820
+subject: "The Sequence Knowledge #850: The Unexpected Comeback of RNNs"
+date: 2026-04-28
+message_id: 19dd4019cea9870d
 ---
 
-New series on post-Transformer architectures — the growing search for alternatives to self-attention as the dominant AI paradigm.
+TheSequence digs into the architectural renaissance happening below the hype layer: RNNs are coming back, and it matters for anyone building production inference infrastructure.
 
-**The Case for Looking Beyond Transformer**
-For nearly a decade, the entire AI ecosystem has been a giant wrapper around self-attention. Transformers won the hardware lottery of the late 2010s: beautifully parallelizable across GPUs, intuitive mental model (every token looks back at every previous token). The arXiv firehose is now showing a visible shift: researchers are exploring novel alternatives. This series aims to map what's happening.
+**The core problem with Transformers at scale.** The KV (Key-Value) cache makes Transformers an O(N^2) operation. At 100K, 1M, or multi-million token context windows, the compute graph "becomes mathematically offensive." The system burns vast amounts of high-bandwidth memory doing memory reads on every token in context. This is a hard infrastructure ceiling.
 
-**Why Now**
-Transformers' quadratic attention cost at long context is increasingly painful as agentic workflows demand 100K+ context windows. Memory bandwidth and inference cost at scale are creating economic pressure for more efficient architectures. State space models (SSMs like Mamba), linear attention, and hybrid approaches are all seeing renewed research interest.
+**The RNN comeback.** New-generation RNNs have larger states, data-dependent gating, and LLM-era training recipes. They are matching Transformer perplexity at scale while maintaining O(1) inference cost — constant memory footprint regardless of sequence length, regardless of context window. The original RNN advantage (fixed hidden state, throw the token away after updating) is exactly what makes inference infrastructure viable at long contexts.
 
-**Key Alternative Architecture Families Being Explored**
-- State Space Models: sequence modeling without full self-attention, O(n) rather than O(n²) complexity
-- Linear attention variants: approximations that preserve expressiveness while reducing compute
-- Mixture-of-Experts (MoE): already deployed at scale (GPT-4, Mixtral, Kimi K2.6) — selective activation rather than dense computation
-- Hybrid architectures: combining attention layers with recurrent or convolutional elements
+**What this means for builders.** For anyone shipping agentic workflows with long context requirements — multi-hour agent runs, large codebases in context, extended reasoning chains — the memory and compute overhead of Transformer KV caches is a real cost center. New-generation recurrent architectures (the newsletter promises a series covering specific architectures) could fundamentally change the cost curve for long-context agentic inference.
 
-**Practical Implications for Builders**
-The Transformer isn't going away — it's deeply embedded in hardware (Nvidia GPUs optimized around matmul patterns) and inference tooling. But alternatives may unlock: longer context at lower cost, better edge/local deployment economics, and new patterns for memory-efficient agent loops. Series will map concrete research into builder-relevant signals.
+**The benchmark parity claim** is the key data point: new-generation RNNs are matching Transformer perplexity at scale, not just on small benchmarks. If this holds at production scale, it represents a genuine alternative to the Transformer monoculture that has dominated since "Attention Is All You Need" (2017).
 
-**Note for Post Generation**
-This issue is a series introduction with limited concrete data points. Best used as supporting context on the "post-Transformer" architectural shift rather than as the primary source for a post.
+Newsletter is paywalled after the concept summary. No competitor mentions flagged. No specific named architectures listed in the accessible portion — the full breakdown is subscriber-only.

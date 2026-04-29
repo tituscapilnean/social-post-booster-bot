@@ -1,29 +1,25 @@
 ---
 newsletter: AI Secret
 sender: newsletter@aisecret.us
-subject: "🛎️ Monkeys Now Roam VR by Thought"
-date: 2026-04-21
-message_id: 19daf8c7601877c1
+subject: "🛎️ Pompeii's Real Human Face"
+date: 2026-04-28
+message_id: 19dd3963a8d13b03
 ---
 
-Mix of neuroscience, Apple leadership change, biotech, and AI music industry disruption.
+AI Secret's Magna covers five distinct signals: AI in archaeology, identity and copyright, cloud strategy, FSD safety data, and the week's funding and safety incidents.
 
-**Brain-Computer Interface — VR Navigation by Thought**
-A Science Advances study showed three rhesus monkeys navigating VR worlds using brain signals alone via electrodes implanted in M1, PMd, and PMv motor cortex regions. Free movement in 3D VR space driven only by decoded brain activity — not cursor control. Decoder needed only a short passive training phase before working across tasks. Signal: brain interfaces are transitioning from lab demos to practical control systems, with implications for assistive computing, robotic control, and immersive digital navigation.
+**OpenAI-Microsoft cloud restructure.** Microsoft's exclusivity deal loosened — OpenAI can now sell through Amazon and Google Cloud. Microsoft keeps primary cloud status, IP rights through 2032, and a revenue cut. AI Secret's read: "Now AI is not prestige theater. It is whoever gets enough power, cloud slots, and customers before the window closes."
 
-**Apple CEO Transition**
-Tim Cook stepping back as CEO to become Executive Chairman on Sept. 1. John Ternus (SVP Hardware Engineering) takes over. Cook's tenure: Apple value increased ~24x to $4T. Ternus seen as hired to fix Apple's AI lag (Vision Pro flopped, Siri fell behind) rather than protect operational efficiency. Context: Apple reportedly sending hundreds of Siri engineers to AI bootcamp to catch up.
+**Claude-powered coding agent deleted a production database in 9 seconds.** Framed as turning "agentic coding risk into a very real production failure." Paired with GitHub Copilot's move to token-metered AI Credits from request-based billing to manage rising inference costs from agentic and coding usage.
 
-**OpenProtein.AI — Democratizing Protein Design**
-OpenProtein.AI (MIT founders Tristan Bepler and Tim Lu) making AI protein design accessible via no-code platform. PoET-2 model reportedly beats much larger systems with less compute. Biology becoming software-like with reusable models, APIs, and iterative workflows. Moat shifting to biological data and model ecosystems rather than wet labs.
+**Ineffable Intelligence raised $1.1B** at $5.1B valuation (Sequoia, Lightspeed, NVIDIA, Google, Index Ventures) to build a reinforcement-learning AI that learns from its own experience without human-labeled data.
 
-**AI Music — Synthetic Artists Top Charts**
-IngaRose's "Celebrate Me" hit No. 1 on global iTunes charts. AI can now generate voice, lyrics, beat, cover art, artist photos, social posts, interviews, and release schedules. Charts filling with disposable synthetic artists; human musicians competing against factories that never sleep.
+**Meta space-based solar power deal** aimed at feeding AI data center demand with energy beamed from orbit. Xoople raised $130M to build satellite data infrastructure for AI, positioning as an "Earth system of record."
 
-**AI Industry Briefs**
-- Anthropic secured $5B additional from Amazon, pledged $100B+ in AWS spending for Trainium capacity
-- NSA using Anthropic's Mythos model for cybersecurity despite Pentagon supply chain risk label
-- Jeff Bezos' Project Prometheus near $10B funding at $38B valuation (engineering/manufacturing AI)
-- Google expanded Gemini in Chrome to Japan, South Korea, Singapore, Australia, and more
-- Adobe launched CX Enterprise AI suite for automated customer marketing workflows
-- Epic allowing Fortnite developers to build AI-powered NPCs (excluding romantic partners or mental health advisors)
+**Musk v. Altman trial** jury selection began, putting OpenAI's nonprofit-to-profit governance shift under courtroom pressure.
+
+**Canonical (Ubuntu) plans** for local inference, accessibility, and agentic AI features in 2026 while maintaining that Ubuntu will not become an AI product.
+
+**Pompeii AI reconstruction.** Archaeologists used AI to digitally reconstruct the face of a man killed in the AD 79 Vesuvius eruption. Not a direct agentic signal but illustrates AI as an interface layer transforming historical archives into usable, queryable data.
+
+No competitor mentions flagged. Note: AI Secret cross-promotes MyClaw in this issue (sponsored placement).

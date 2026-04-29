@@ -1,29 +1,24 @@
 ---
 newsletter: Nate's Substack
 sender: natesnewsletter@substack.com
-subject: "Opus 4.7 migration: what broke, what it actually costs, and the one pattern that catches what both models miss"
-date: 2026-04-21
-message_id: 19db0292b9dc034a
+subject: "ChatGPT 5.5 scored 87 where the next best model scored 67. Here's what that gap looks like in real work."
+date: 2026-04-28
+message_id: 19dd46f0d484e3ba
 ---
 
-Detailed Opus 4.7 migration analysis from 4 days of production testing vs GPT-5.4, plus Claude Design evaluation.
+Nate's review of GPT-5.5 in production knowledge work is the most grounded model comparison of the week.
 
-**What's Real in Opus 4.7**
-Genuine capability gains in persistence, coding, vision, and knowledge work. But gains are NOT uniform — web research and terminal regressions worth routing around. The model became more literal: inference it previously did automatically (guessing what you meant) is now gone. Fix is clearer prompts, not longer ones.
+**The key finding:** GPT-5.5 scored 87 on a knowledge-work benchmark where the next best model scored 67. But Nate's argument is that benchmarks miss the point. What matters is whether the model can handle "the work that breaks models" — messy files, legal risk, 23 deliverables that need to open in the right format. On his "Dingo test" (executive knowledge-work package), GPT-5.5 produced "the closest thing to a real executive handoff I have seen from any model" with real files, real legal posture, and real artifacts.
 
-**The Tokenizer Tax**
-Bills went up even though sticker price didn't change. Three compounding factors: a tokenizer tax, adaptive thinking overhead, and breaking API changes that compound in ways headline pricing hides. Some workflows now cost measurably more per unit of output.
+**Three hard tests:**
+1. Executive knowledge-work package ("Dingo test") — GPT-5.5 won by a wide margin
+2. 465-file data migration ("Splash Bros") — cleared the canary check for the first time, but backend hygiene still not production-safe
+3. Interactive 3D research build ("Artemis") — blank-canvas visual taste remains Claude's territory
 
-**Backlash and Praise Are Both Describing Real Things**
-People treating this as one story will make the wrong migration call. Some will overpay for work that got cheaper. Others will downgrade away from the one model that actually got the hard stuff right. The combative, more literal behavior and the capability gains are separate engineering choices that shipped in the same release — they have separate fixes.
+**The harness matters as much as the model.** GPT-5.5 paired with Codex + computer use + Images 2 becomes a system that can actually finish things. This aligns with The Leverage's framing of the model as engine, harness as car.
 
-**Claude Design — The $42 Afternoon**
-Nate spent an afternoon inside Claude Design. The design tool turns brand assets into machine-readable agent instructions. Correction loop reveals where Anthropic actually is vs. where the valuation says they should be. Useful but not fully realized — the feedback loop between intent and output still requires significant human iteration.
+**Where Opus stays the right call:** Nate is still routing complex visual and aesthetic work to Claude. The two-model workflow persists even as his defaults shift.
 
-**Three Migration Prompts**
-1. Pre-flight check: flags what breaks when switching from Opus 4.6 to 4.7
-2. Cost estimator: quantifies the tokenizer tax on your specific usage patterns
-3. Peer review workflow builder: adds the reliability layer that catches what both models miss
+**For the last several months, Anthropic felt like it held the lead on practical knowledge work.** Opus 4.7 was the first call for real work, Sonnet was the workhorse. GPT-5.5 changes that routing, particularly for multi-artifact business packages and complex, multi-step execution.
 
-**Bottom Line for Builders**
-Opus 4.7 is stronger on the hardest work. It's also more expensive per-unit even at the same list price, and more combative on ambiguous instructions. Don't treat migration as a toggle — audit which workloads genuinely need the new capabilities vs. which got cheaper to run on 4.6-class alternatives.
+Post is paywalled after the preview. No competitor mentions flagged.

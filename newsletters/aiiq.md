@@ -1,24 +1,19 @@
 ---
 newsletter: AI IQ
 sender: aiiq@substack.com
-subject: Are LLMs the Wrong Kind of Intelligent?
-date: 2026-04-06
-message_id: 19d62a581698f6ce
+subject: AI in EdTech Should Help Teachers Because It Can't Replace Them
+date: 2026-04-24
+message_id: 19dbf23254f4255b
 ---
 
-Navin Kabra analyzes Adam Mastroianni's argument about two types of intelligence: objective vs. subjective.
+AI IQ cross-posts a Navin Kabra essay on Khanmigo's failure — and what it reveals about the 5% problem in AI adoption.
 
-**Key thesis:**
-- Objective intelligence: clear boundaries, verifiable solutions (math, data analysis, literature review)
-- Subjective intelligence: vague, squishy problems (how to live, persuasion, leadership, paradigm shifts)
-- LLMs excel at objective intelligence but lack subjective intelligence
-- Job impact will be greatest in fields requiring primarily objective intelligence
+**The Khanmigo story.** Khan Academy launched Khanmigo (ChatGPT-powered AI tutor) expecting "probably the biggest positive transformation that education has ever seen." Received millions of views, a book deal, philanthropic subsidies (Gates Foundation, state funds, $2M from Stiles-Nicholson Foundation, Microsoft sponsored licenses in 49 countries). Result: "For a lot of students, it was a non-event. They just didn't use it much." — Sal Khan.
 
-**Key quotes/insights:**
-- "The world handsomely rewarded legible intelligence, but LLMs will commoditize legible intelligence, and the value of illegible intelligence will go up"
-- Historical parallel: nerds (high objective, low subjective intelligence) couldn't convert smarts into social success
-- Science analogy: faster tools (Google Scholar, Mechanical Turk, stats software) didn't accelerate paradigm shifts in psychology
-- "Bottleneck blindness": we assume our current bottleneck is our only bottleneck; removing one reveals the next
-- Montaigne (1580): "though we could become learned by other men's learning, a man can never be wise but by his own wisdom"
+**The 5-Percent Problem.** Bloom's 2-Sigma Problem: 1-on-1 tutoring produces 2 standard deviation improvement — AI tutoring was supposed to solve this at scale. The actual problem: only 4.7% of students use Khan Academy as recommended (30+ min/week). Similar low-utilization numbers across DreamBox, i-Ready, IXL. The tools work for the 5% who are self-motivated; the other 95% need teachers, classrooms, peer pressure, and board exams.
 
-**Agentic angle:** Directly relevant to orchestrator vs. specialist debate. As objective intelligence gets commoditized by AI, the value shifts to people who can frame problems, build judgment, and navigate ambiguity. Supports pillar #2 (era of the generalist/orchestrator).
+**The "pivoting to humanity" reframe.** Dan Meyer argues EdTech can only make a difference by helping human teachers, not replacing them. Real teaching is 40% remembering personal context (the novel they're writing, the tea they spilled about friends), 40% building confidence and reassurance, 20% actually teaching math. "A tutor can explain fractions. A teacher can make a child willing to try fractions again."
+
+**Implications for AI builders.** The 5% problem is a general pattern, not education-specific. Any autonomous AI tool that requires proactive user engagement will hit this ceiling unless it's embedded in a context with external accountability structures. The analogy that holds: "Khanmigo did not fail the way bad software fails. It failed the way gym memberships fail: the equipment was there, the promise was real, but most people did not show up."
+
+No competitor mentions flagged. Limited direct agentic infrastructure signal, but the 5% adoption pattern has broad relevance to agent deployment.

@@ -1,32 +1,23 @@
 ---
 newsletter: The Pragmatic Engineer
 sender: pragmaticengineer@substack.com
-subject: Learnings from conducting ~1,000 interviews at Amazon
-date: 2026-04-21
-message_id: 19db01857896b769
+subject: How will AI change operating systems? Part 1: Ubuntu and Linux
+date: 2026-04-28
+message_id: 19dd47dc0084926c
 ---
 
-Guest post from Steve Huynh (ex-Amazon Principal Engineer, 17 years, ~1,000 interviews including ~600 as Bar Raiser). Focus: behavioral interviews and what drives hiring decisions. Limited AI-agentic signal — primarily career/hiring content.
+The Pragmatic Engineer interviews Jon Seager (VP Engineering, Canonical) on Ubuntu's AI strategy — a ground-level look at how the OS layer is responding to agentic and inference workloads.
 
-**The Core Insight**
-Candidates fail not because they lack technical skill, but because of how they present themselves. "Technical skills are the ante. They get you into the game. But they're not what wins you the hand." The final round figures out whether the team *wants to work with you*, not just if you can do the job.
+**The hardware enablement thesis.** Canonical's core position: don't blur the line between application features and the OS itself. The most powerful contribution is hardware enablement — ensuring AI accelerators (GPUs, NPUs, DPUs) perform at their full potential when plugged into Ubuntu. If a machine has AI hardware, Ubuntu should unlock it without manual driver gymnastics.
 
-**Preparation Asymmetry**
-Average candidate spends 95% of time on technical prep, 5% on everything else. Returns on technical prep diminish rapidly; returns on behavioral story prep are exponential because almost nobody does it. Ten hours of story prep can completely change outcomes. Technical interviews allow winging via reasoning; behavioral interviews cannot be winged — no hints possible.
+**NVIDIA partnership.** Canonical now packages and distributes the full NVIDIA CUDA toolkit directly within Ubuntu's apt repositories — collapsing a multi-step manual installation (download, GPG keys, pinning a separate repo) into one standard command. NVIDIA discontinued its custom DGX OS and now ships plain Ubuntu. The DGX Spark ($4,000 AI workstation with ARM64 chipset) ships running vanilla Ubuntu as the only supported OS. Ubuntu 26.04 LTS announced day-one support for NVIDIA Vera Rubin NVL72 rack-scale architecture.
 
-**The Four Dimensions That Determine Level**
-1. **Scope**: How many people were affected by your work? (your output → your team → adjacent teams → organization-wide)
-2. **Contribution**: What did you specifically do vs. "we"? (execute assigned → own complete solutions → lead cross-team → create organizational capabilities)
-3. **Impact**: What measurably changed? Connect technical wins to business/user outcomes with numbers
-4. **Difficulty**: Complexity of problems, constraints faced, trade-offs managed. Hard problems solved well beat easy problems with big impact
+**AMD and Intel neutrality.** Ubuntu 26.04 LTS will be the first major distribution to natively package all three GPU compute stacks — NVIDIA CUDA, AMD ROCm, and Intel OpenVINO — with 15-year enterprise support under Ubuntu Pro.
 
-**Key Behavioral Interview Signals Companies Look For**
-- Role fit: how you handle ambiguity, cross-team coordination, rapid iteration
-- Company fit: bias for action, customer obsession, radical transparency — same story sends different signals to different companies
-- Common mismatches: independence vs. collaboration, speed vs. thoroughness, excellence vs. pragmatism, innovation vs. stability, direct vs. diplomatic, data vs. intuition, specialist vs. generalist
+**Architecture variant support.** Ubuntu now produces binaries for x86_64 v3 (and plans more variants including ARM v9, v10, v11, RISC-V RVA). Previously, all AMD64 builds compiled for v1 to maximize compatibility, leaving newer CPUs unable to use AVX-512 and other ML-accelerating instructions. Now users on v3-compatible processors get an OS variant that uses the silicon fully.
 
-**AI Context (from Gergely's note)**
-"Technical interviews are going through a big change, thanks to AI tools: some companies are bringing in new, AI-assisted types of interviews, while others are trying to make 'pre-AI' type interviews work. What doesn't seem to be changing is the second type of interviews: the behavioral ones."
+**Local-first and agentic workflow plans.** Focus on "inference snaps" for choosing the right model with the right quantization. Agentic workflow support at the OS level is at "early exploration stage" — Canonical is committed to it but has not shipped it. Engineering culture shift: skepticism about AI has given way to encouraged experimentation, with no targets for token usage or AI-generated code percentages.
 
-**Note for Post Generation**
-Minimal AI-agentic signal this issue. The AI note about changing technical interview formats is a data point. Not suitable as primary source. Useful for posts about how AI is changing hiring/talent evaluation if that angle becomes relevant.
+**Other Linux distributions:** Arch takes DIY approach. Omarchy makes AI tool installation easy. Red Hat Enterprise Linux ships AI integrated into the CLI with support for AI accelerators and popular tools.
+
+No competitor mentions flagged.

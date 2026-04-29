@@ -1,27 +1,19 @@
 ---
 newsletter: AlphaSignal
 sender: news@alphasignal.ai
-subject: "🔄 Claude Live Artifacts: auto-refresh dashboards + Amazon $5B compute"
-date: 2026-04-21
-message_id: 19db14a5aea80fb5
+subject: "🔌 Claude connects to Blender, Adobe CC + 7 more creative tools"
+date: 2026-04-28
+message_id: 19dd54b094443fda
 ---
 
-Focus on Claude's expanding role as operating layer for work, backed by massive infrastructure investment.
+Two convergence stories dominate this issue: AI collapsing into one interface layer across professional tools, and the economics of agentic sessions forcing billing model changes.
 
-**Claude Live Artifacts — Real-Time Connected Dashboards**
-Claude shipped Live Artifacts inside Cowork: build a dashboard or tracker, connect it to apps and files, auto-refreshes with current data on every open. Features: auto-refreshing dashboards with live data connections, saved in Live Artifacts tab with full version history (rollback available), accessible across sessions. Available now on all paid Claude plans. Create a project tracker, metrics dashboard, or data monitor once and it persists — no more rebuilding or copy-pasting numbers.
+**Claude's 9 new MCP connectors for creative tools** are the headline. Via MCP, Claude now plugs into Adobe Creative Cloud (orchestrating multi-step workflows across Photoshop, Illustrator, Firefly, Premiere, and more), Autodesk Fusion (3D model creation by conversation), Affinity by Canva (batch image adjustments, layer renaming, export automation), Blender (natural-language Python API access — describe what you want instead of scripting), Splice (royalty-free sample search), Ableton, SketchUp, and Resolume. Because the connector is MCP-based, it's accessible to other AI models beyond Claude. Setup is through Claude Settings > Connectors.
 
-**Amazon Doubles Down on Anthropic — $5B + 5 Gigawatts**
-Amazon secured up to 5 gigawatts of compute capacity for training and deploying Claude, with nearly 1GW of Trainium2 and Trainium3 capacity coming online by end of 2026. Claude Platform now directly accessible inside AWS accounts — no extra credentials or contracts. Expanded inference capacity coming to Asia and Europe. Anthropic's run-rate revenue surpassed $30B (up from $9B at end of 2025). Amazon investing $5B now, up to $20B more tied to commercial milestones.
+**GitHub Copilot is moving to pay-per-use billing starting June 1**, ending the flat-fee model and pricing by token consumption. The same shift Atlassian and HubSpot announced the prior week. The pattern: as agentic sessions eat more compute, flat subscriptions break down — inference costs at scale are incompatible with seat-based pricing.
 
-**Claude Code's 'Find Skills' Plugin**
-New plugin auto-recommends the right MCP tools for any task (3,318 likes on X). Directly relevant to MCP server hub operators like Civic — surfaces the right tools at task time.
+**MIT's Platonic Representation Hypothesis** finds that different AI models trained on different data are converging on the same internal map of reality — the same internal representations regardless of architecture or training data. Implications for builders: the model layer is becoming fungible, which shifts differentiation to harness, tooling, and interface layers.
 
-**Top Repo — career-ops (Open-Source Job Hunt Automation)**
-Uses Claude to scan job portals, evaluate fit by reasoning against CV, generate tailored ATS-optimized CVs, and process 10+ offers in parallel. Creator evaluated 740+ offers, applied to 66, got 12 interviews, landed Head of Applied AI role. Does not auto-submit — human reviews every report. 36K+ GitHub stars. Flags suspicious ghost job listings using independent legitimacy check.
+**Other signals:** OpenAI shipped `realtime-voice-component`, an open-source React package for voice-controlled apps built on gpt-realtime-1.5. Google Gemma 4 powers a fully local browser agent (history search, tab management) running via WebGPU with no server or API key. Qwen3 35B MoE distilled from Claude Opus ships as free quantized GGUF. Microsoft released a single-photo-to-3D-model tool.
 
-**Other Signals**
-- Open-source desktop tool turns any image into a 3D model on local GPU
-- Open-source AI hedge fund simulates 13 legendary investors making trades
-- Intel shrinks Qwen3.6-35B to int4 for single GPU deployment
-- New framework redefines software engineering for AI agents era
+No competitor mentions flagged.

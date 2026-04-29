@@ -1,27 +1,19 @@
 ---
 newsletter: The Daily Upside
 sender: squad@dailyupside.co
-subject: Wall Street's Bull Case
-date: 2026-04-21
-message_id: 19daffa4af319167
+subject: Joby Takes Manhattan
+date: 2026-04-28
+message_id: 19dd4033baebcf80
 ---
 
-Business/markets newsletter. Limited AI-agentic signal. Key stories:
+The Daily Upside covers OpenAI's legal and partnership moves, Joby's eVTOL New York City campaign, and Oprah's Amazon video podcast deal.
 
-**Apple CEO Transition**
-Tim Cook stepping down Sept. 1; John Ternus (hardware engineering SVP) succeeds him. Apple revenue roughly quadrupled to $400B+ during Cook's 15-year tenure. Ternus brings design/engineering expertise; tasked with delivering foldable phones, AI pins, and smart glasses — avoiding another Vision Pro situation.
+**OpenAI's IPO groundwork — legal and partnership.** Jury selection began in Oakland for Musk v. Altman. Musk originally provided ~$38M in seed money 2016-2020 on conditions OpenAI remain nonprofit and that he be named CEO. He filed suit in 2024 seeking $150B and Altman's removal. OpenAI called it "baseless." In parallel, OpenAI-Microsoft amended their agreement: OpenAI can now sell across any cloud provider (key selling point for rival Anthropic), Microsoft stops revenue share, OpenAI's share is capped through 2030, Microsoft retains 27% stake. OpenAI also reportedly partnering with Qualcomm and MediaTek on an AI-agent smartphone architecture.
 
-**Wall Street Bull Case — Earnings Season**
-S&P 500 ended 14-day winning streak on Iran peace talk uncertainty. Of the 10% of S&P 500 companies reporting: 88% beat EPS estimates (vs 5-year avg 78%, 10-year avg 76%). All 11 sectors showed year-over-year revenue growth. Financial sector driving 9.9% overall revenue growth rate — highest since Q3 2022. Roundhill Magnificent 7 ETF up 18% from March 30 low; Bloomberg projects Mag 7 profit growth of 19% this year vs 17% for rest of index.
+**Joby Aviation's New York City campaign.** Completed first point-to-point eVTOL flights in NYC — JFK to Manhattan in under 10 minutes (vs. 60+ minutes by car). Part of a 10-day flight campaign targeting FAA Type Certification. Partnerships: Delta Air Lines, Toyota, Uber (booking integration). First passengers expected in Dubai later this year. Joby stock gained 6.23% on the news. Competitor Archer Aviation sued Joby in February alleging deception about Chinese supplier reliance.
 
-**AI Relevance: Software Survival**
-Mizuho analysis on AI vs. software: AI can automate rote functions, but "true systems of record housing proprietary and confidential data cannot be readily replaced." Native AI companies reshaping tech landscape unevenly across the sector. Signal: investors looking for which software survives the AI wave — data moats and proprietary context are the defensible positions.
+**Oprah Winfrey signs with Amazon** for a twice-weekly video podcast across Prime Video, Music, Audible, and Fire TV starting July. Amazon also gets hooks into Oprah's book club and talk show. The broader video podcast trend: 1 billion monthly YouTube viewers for video pods (YouTube's own figure), Spotify has 500K video pods watched by 400M users, Apple recently added video podcast support.
 
-**Fintech Bank Charter Surge**
-Mission Lane (credit card startup) applying for national bank charter. Follows Upstart, Revolut, Mercury Technologies. OCC fast-tracking approvals: median approval time dropped from 321 days (2024) to 166 days (2026). Fintechs trading startup flexibility for strategic and financial benefits of charter. Klaros expects another record year for applications in 2026.
+**China blocks Meta's $2B Manus acquisition** — highest-profile AI deal vetoed on national security grounds. China reportedly banned two Manus executives from leaving the country. Meta says the purchase was legal.
 
-**Eli Lilly Cancer Acquisition**
-Lilly buying Kelonia Therapeutics for up to $7B ($3.3B upfront). Kelonia developing in-vivo CAR-T cell therapy that reprograms T cells within the body — no need for preemptive chemotherapy. Cancer drugs were $9B+ of Lilly's $65B revenue last year.
-
-**Note for Post Generation**
-This issue has limited AI-agentic signal. Useful only as supporting economic context (bull market sentiment, software vs. AI economic stakes). Not suitable as primary newsletter source.
+Limited agentic infrastructure signal; primary value is the OpenAI legal/partnership context. No competitor mentions flagged.

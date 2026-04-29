@@ -1,33 +1,23 @@
 ---
 newsletter: Benedict Evans
 sender: list@ben-evans.com
-subject: "Benedict's Newsletter: No. 639"
-date: 2026-04-21
-message_id: 19db05a792e6d98d
+subject: "Benedict's Newsletter: No. 640"
+date: 2026-04-28
+message_id: 19dd468e7a3a5d46
 ---
 
-Strategic analysis of AI market dynamics, Anthropic's surge pricing problem, and agentic commerce.
+Benedict Evans' macro-strategic read on the week's biggest structural moves.
 
-**Anthropic's Capacity Crunch — The Mobile Data Analogy**
-Anthropic is experiencing infrastructure strain from agentic coding adoption: outages increasing, users reporting limited responses, Claude Code being cut off, price increases rolling out. Evans frames it as the mobile data crisis of the late 2000s when iPhone's flat rate data swamped AT&T's network. Natural end-state: segmented flat-rate bundles. Anthropic invested least in capacity of all big labs (partly reflecting lack of a consumer story) — now agentic coding finding massive product-market fit is making that a real problem. Long-term speculation: token budgets may rise to match headcount budgets.
+**Anthropic's compute deals.** Anthropic announced a ten-year $100B, 5GW infrastructure deal with Amazon (including Trainium chips), then a Google deal: $10B now plus up to $30B more based on performance targets, expanding an earlier investment and compute deal with Google and Broadcom. Evans' framing: Anthropic is buying compute with equity. Agentic models — especially agentic coding — have increased raw capacity demand by orders of magnitude and the company can't keep up.
 
-**OpenAI's Strategic Problem**
-OpenAI lacks unique tech. Has big user base but limited engagement and stickiness, no network effect. Incumbents have matched the tech and are leveraging product and distribution. Most future value will come from new experiences that haven't been invented yet. Evans asks: what's the plan?
+**OpenAI-Microsoft partnership restructured.** Non-exclusive license, $38B AWS deal, Microsoft stops revenue share to OpenAI, OpenAI's share to Microsoft capped through 2030, AGI definition quietly removed from the contract. Evans: Microsoft is three months behind both Claude and ChatGPT on the basic task of having Copilot interact with documents in Office. "Yes, that's only a few months behind, but isn't this Microsoft's entire thing?"
 
-**Meta Manus — China Geopolitical Risk**
-China's reaction to Meta's acquisition of Manus (agentic AI platform) is escalating: orders reportedly from the top, multiple ministries involved. Moving co-founders to Singapore to circumvent Chinese limits on foreign acquisitions may not have been as clever as it seemed, especially in a strategic sector. Signals: China is only investable if you can get a domestic exit.
+**The Cursor/xAI deal.** SpaceX gets a $60B call option with a $10B breakup fee. Evans' assessment of Cursor's position: it was the hot AI coding story a year ago, but Anthropic is now far ahead. Cursor is dependent on OpenAI and Anthropic models, announced its own model which was "really an open-source Chinese model," and agentic coding needs infrastructure Cursor doesn't have. The Information: Cursor had over 20% negative gross margins last quarter (now turned positive).
 
-**Allbirds as AI Bubble Barometer**
-Allbirds (effectively just a cash shell after selling shoe business for pennies) announced "something vague in AI data centres" and stock went up 5x. Evans: "That's the kind of thing that happens in bubbles, but it also reflects a basic shortage of ways for public markets investors to get a clean investment in AI." Shortage of pure-play public AI vehicles inflating any adjacent name.
+**SpaceX IPO.** Targeting $1.75T valuation, $75B raise. Starlink produced $4.4B profits in 2025; overall revenue $19B. Evans' read: "don't value Tesla on what it is, value it on things that don't exist yet" — the same logic applied here. Orbital data centers, mining on the moon. xAI is valued at $250B despite being pre-meaningful-revenue.
 
-**Nvidia and Export Controls**
-Jensen Huang interview: Chinese chips aren't as good as Nvidia's, but China has abundant cheap energy and can use more chips to get the same result. Withholding Nvidia chips doesn't slow Chinese AI — it just cuts off the market for US companies and pushes China to build its own tech stack.
+**Intel's 24% stock spike** after beating estimates ($13.6B vs $12.4B consensus) and raising guidance as companies building data centers "snap up pretty much any chips they can get their hands on."
 
-**Uber Returns to Robotics — Portfolio Model**
-Uber committed $10B over the next few years toward vehicle purchases and equity stakes across a dozen+ robotics/AV tech companies (nearly $10B FCF last year). Portfolio model, not building in-house this time. Waymo is "kind of working."
+**Data:** Ramp finds 74% of AI SaaS spend is token-based vs. seat-based. Meta cutting 8K employees (10%) to fund AI. Anthropic's security around Mythos (superhuman hacking model) had holes exploited by Reddit users.
 
-**Mondelez on Agentic Commerce**
-Mondelez planning for agentic commerce: primarily best practice for SEO. Signal: major CPG brands are thinking about how AI agents will discover and recommend products, not just how human search works.
-
-**Agentic Commerce Data Point**
-IDC research cited: companies integrating agents with collaboration systems see returns of 33 hours per person per week. Early adopters creating market advantages that make it harder for competitors to catch up.
+No competitor mentions flagged.

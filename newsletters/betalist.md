@@ -1,29 +1,9 @@
 ---
 newsletter: BetaList
 sender: team@betalist.com
-subject: Insidebnb, BeyondBudget, ShelfCheck, Widgetfied, BidWolf, and more
-date: 2026-04-21
-message_id: 19db0995539ac626
+subject: Baroque, ChannelScout, PixGrid, PDF Pro, Rotten Tropes, and more
+date: 2026-04-28
+message_id: 19dd4a5089d7b716
 ---
 
-Startup product listing digest. No editorial content. Notable AI-related launches this issue:
-
-**RouteStack.ai** (BOOSTED) — Plug live travel inventory and deep link checkout into your AI agent. Positioned as infrastructure for travel commerce agents.
-
-**Betula** — AI assistant that calls, texts, reminds, briefs, and remembers for you. Persistent memory + communication automation.
-
-**Accounting Ketchup** — Catch up your QuickBooks fast with AI-powered cleanup. Agentic accounting cleanup tool.
-
-**Mindry** — AI-powered journaling that puts personal growth on your terms.
-
-**Other Startups (Non-AI)**
-- Insidebnb: Instant revenue forecasts and market data for Airbnb investors
-- BeyondBudget: Simulate your financial future with automated calculation engine
-- ShelfCheck: AI-powered inventory and expiry tracking for beauty shelf
-- Widgetfied: Find clients, book jobs, take payments, and track KPIs in one hub
-- BidWolf: Connect with vetted contractors and get fast, competitive bids
-- Nexus: Bookmark manager
-- BaselineBody: Mobility, strength, and breathwork sessions under 20 minutes
-
-**Note for Post Generation**
-RouteStack.ai (travel inventory API for AI agents) is the most relevant agentic signal. Betula (persistent memory + multi-channel communication agent) is also notable. Not suitable as primary source — use as supporting texture only.
+[non-content: BetaList is a startup directory digest. This issue lists early-stage product launches — Baroque (AI-generated web/app interfaces), ChannelScout (app URL to ranked channels + 30-day launch plan), PixGrid (AI photo editing for TikTok/YouTube), PDF Pro (browser-based PDF processing), Rotten Tropes (movie trope discovery), Flydial (automated cold calls and meeting booking), Map Your Video (pre-shoot planning), FRNTIR (car pricing intelligence), Screenplay Assistant (scene-by-scene screenplay formatting), MediTailor (mood-based AI meditation), TonimusAI (content and engagement automation). None of these are agentic infrastructure, AI agent tooling, or relevant to the target audience of agent builders and operators. Skip.]

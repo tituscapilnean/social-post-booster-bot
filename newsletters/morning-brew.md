@@ -1,24 +1,21 @@
 ---
 newsletter: Morning Brew
 sender: crew@morningbrew.com
-subject: "☕️ Just asking questions"
-date: 2026-04-21
-message_id: 19daf56dc7c37f85
+subject: "☕️ Rounding up"
+date: 2026-04-28
+message_id: 19dd3639fdf25a5c
 ---
 
-General business/markets newsletter. Limited AI-agentic signal this issue. Key stories:
+Morning Brew's general-audience newsletter covers the OpenAI-Microsoft restructure, China blocking the Manus acquisition, and SCOTUS hearing pesticide arguments.
 
-**Apple CEO Transition**
-Tim Cook stepping down Sept. 1 to become Executive Chairman. John Ternus (hardware engineering SVP) takes over as CEO. Apple value increased ~24x during Cook's tenure to $400B+ revenue. Ternus is a design and engineering guru inheriting challenges: AI lag, Vision Pro commercial flop, Siri reputation problems. Apple turns 50 this year; Ternus will be its 8th CEO and 3rd in 30 years.
+**OpenAI-Microsoft partnership amendment.** Microsoft's exclusive rights to sell OpenAI models are eliminated — OpenAI can now work with Microsoft's rivals. This clears the way for a $50B Amazon investment. Microsoft stops paying revenue share to OpenAI; OpenAI's share to Microsoft is capped through 2030. Microsoft retains 27% stake. OpenAI is reportedly working with Qualcomm and MediaTek to develop an AI-agent smartphone (per Ming-Chi Kuo) — the device that could replace traditional apps with AI agents. Qualcomm shares jumped ~1% on the news; Apple fell 1.2%.
 
-**Markets**
-Nasdaq 24,404, S&P 7,109, Dow 49,442. Stocks ticked down; Iran war ceasefire set to expire. Nasdaq's longest winning streak since 1992 broken. Airline/cruise stocks down on fuel cost worries.
+**China blocks Meta's $2B Manus acquisition.** Chinese regulators blocked the deal, highest-profile AI deal vetoed on national security grounds since the chip wars began. Experts say China is trying to curb transfer of homegrown AI know-how to the US and discourage AI companies from relocating abroad for foreign investment. China reportedly banned two Manus top executives from leaving the country. Meta says the purchase was legal and hopes to resolve the issue.
 
-**Fed Chair Nomination**
-Kevin Warsh confirmation hearing. Warsh has argued for rate cuts citing expected AI productivity gains, though Fed officials skeptical. Key question: how he'd handle pressure from Trump vs. maintaining Fed independence.
+**Musk v. Altman trial begins.** Jury selection started in Oakland. Elon Musk is seeking $150B in damages and wants OpenAI to revert to nonprofit with Altman removed. OpenAI called it "baseless" and "a jealous bid to derail a competitor." The liability phase expected to last three weeks.
 
-**mRNA Cancer Treatment Milestone**
-7 of 16 pancreatic cancer patients given personalized mRNA vaccines responded and are still alive 6 years later. Same mRNA technology as Covid vaccines. Phase 2 trial in progress.
+**Other news:** SCOTUS heard Monsanto/Roundup pesticide case. Shell agreed to buy Arc Resources for $13.6B. Taylor Swift filed trademark applications for voice clips and stage imagery to protect against AI deepfakes.
 
-**Note for Post Generation**
-Minimal AI-agentic signal this issue. Apple CEO transition and mRNA biotech are the notable stories. Not suitable as primary newsletter source for AI agent post.
+Markets: S&P at 7,173.91 (+0.12%), Nasdaq at 24,887.10 (+0.20%).
+
+No AI agent-specific competitor mentions flagged.

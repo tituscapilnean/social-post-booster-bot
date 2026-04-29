@@ -1,27 +1,21 @@
 ---
 newsletter: MyClaw Newsletter
 sender: MyClaw@aisecret.us
-subject: "🦞 Z.AI Wants Your Code"
-date: 2026-04-21
-message_id: 19db0174731562f3
+subject: "🦞 Only Nonlinear Work Survives"
+date: 2026-04-28
+message_id: 19dd42f442b26df4
 ---
 
-OpenClaw community news: model switching economics, tool updates, and agent workflow optimization.
+MyClaw's issue this week centers on what kinds of human work survive the agentic transition, and what enterprise infrastructure is materializing to manage agents.
 
-**Z.AI Coding Plan Lockdown**
-Z.AI tightened rules on its coding subscription plan — users relying on it for non-coding tasks face aggressive throttling, temporary restrictions, and permanent bans after repeat violations. Developer community frustration: plans were subsidized with intent to collect coding data for training. Peter Steinberger agrees this was the actual goal. Data collection, not breadth of use, was always the value exchange.
+**Palantir CEO Alex Karp on skill inversion.** Karp argues AI agents will invert which skills matter: low-end coding, lawyering, reading, and writing are losing value, while real expertise, artistic problem-solving, and non-playbook thinking (what he calls "nonlinear work") become more important. Two safer paths: vocational expertise or neurodivergent/unconventional thinking.
 
-**Kimi K2.6 vs Gemini**
-Evolvent AI's ClawMark benchmark: Kimi K2.6 scored 0.684, narrowly beating Gemini 3.1 Pro's 0.682, and a 0.124 jump over K2.5. K2.6 push includes richer web generation: shaders, 3D scenes, video sections, backend wiring. Positioned as a cheaper Claude alternative — reportedly 76% cheaper.
+**The growing workspace as the moat.** MyClaw contributor Charles Wu details why OpenClaw can feel increasingly "human" the longer you use it — not because the model is becoming conscious, but because the workspace is creating continuity. Conversations, preferences, tools, logs, and lessons are written into Markdown files, searched, reloaded, and refined across sessions. The real asset is the growing workspace, not the rented model weights.
 
-**GPT vs Opus on OpenClaw**
-Developers switching OpenClaw from Opus to GPT report repeated failures on simple cron-style workflow tasks: template mangling, incomplete task execution. Community consensus: GPT-5.4 needs more explicit system prompts, higher reasoning settings, and custom SOUL.md files. Opus works more smoothly out of the box for agentic workflows. One entrepreneur's Opus bill: $3,000-$4,000/month — still cheaper than the 11-person team he replaced with 3 employees plus OpenClaw and Codex.
+**Agent managers entering enterprise.** Box CEO Aaron Levie says enterprises will need "agent deployers" embedded across teams — people who find workflows where agents can replace repetitive human labor faster and cheaper. This role may become the person companies hire before cutting far more people.
 
-**gog 0.13 — Google Workspace Agent Bridge**
-Peter Steinberger's gog 0.13 expands Google Workspace integration: Gmail forwarding with notes and attachments, autoreplies, full-body email search, Markdown uploads to Google Docs. Script-friendly CLI bridge giving OpenClaw structured, browser-free access to Gmail, Calendar, Drive, and Docs.
+**Support agents as customer-facing infrastructure.** A detailed walkthrough of building an OpenClaw support agent with persistent memory, narrow channels, live-doc access, urgency triage, session logs, and PDF/audio handling. The stack turns support into an auditable automation layer.
 
-**MCPorter 0.9.0 — MCP Server TypeScript CLI**
-MCPorter 0.9.0 adds: per-server tool filtering, more reliable stdio shutdown handling, Windows OAuth URL quoting fix, clearer OAuth configuration docs, schema-based string coercion for tool calls. Positions as a way to call MCP servers from TypeScript or command line.
+**OpenClaw v2026.4.25 and v2026.4.26 releases** push hard on voice (13 speech providers, personas, overrides), observability (OTEL for model calls, tools, exec, cost, memory pressure), faster plugin startup, Matrix E2EE one-command setup, Google Live Talk support, browser control improvements, and Cerebras joining the bundled provider set.
 
-**wacli 0.6.0 — WhatsApp CLI Security Hardening**
-wacli 0.6.0 security focus: hardened SQLite and store path handling, sanitized search queries, improved crash recovery from sync and media issues, added WACLI_STORE_DIR option for storage control, cleaner SIGINT exits.
+No competitor mentions flagged. Note: MyClaw is a newsletter that uses "OpenClaw" as its name for Claude Code-based agent infrastructure.

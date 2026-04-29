@@ -1,23 +1,19 @@
 ---
 newsletter: Lenny's Newsletter (How I AI)
 sender: lenny@substack.com
-subject: "New: A free year of Cursor, Google AI Pro, Notion, Supabase, Gumloop, and Fin for subscribers"
-date: 2026-04-21
-message_id: 19db0953d2054cfa
+subject: Your Couch-to-5K for AI
+date: 2026-04-28
+message_id: 19dd4b9c6b5d8ae4
 ---
 
-Product Pass announcement — promotional email, not substantive editorial content.
+Lenny's guest post from Hilary Gridley — product leader who worked at WHOOP, Dropbox, and Big Health — applies behavior-change science to AI skill adoption.
 
-**Lenny's Product Pass — Updated Tool Bundle**
-New additions to Lenny's Newsletter subscription bundle (Annual or Insider tier):
-- **Cursor Pro** ($240 value): AI code editor, Insider-tier only
-- **Google AI Pro** ($240 value): Gemini, NotebookLM, Antigravity, Nano Banana, Flow, 5TB storage
-- **Notion Business** ($240 value): collaborative AI workspace where teams and agents work together; examples include Weekly Briefing agent, AI OS for work (used at Ramp and Cursor internally)
-- **Supabase Pro** ($300 value): managed Database, Auth, Storage, Edge Functions, Realtime, Vector search; Insider-tier only
-- **Fin + Intercom** ($7,140 value): 5 seats + $100/month in AI outcome credits for AI customer service agent; noted use case: transforming support for Anthropic, supporting 50M users with 20 agents for Gamma
-- **Gumloop Pro** ($444 value): agent-building platform, no engineering required; examples include sales agents updating CRM, scheduling assistant with Granola MCP integration, global support operations via interconnected specialized AI agents
+**The core argument.** "I'm too busy" is a proxy for something else standing in the way. At its core, procrastination is waiting for an external force to change (your to-do list clearing) rather than making a change in action. Tim Pychyl's research: "once we get started, we're typically able to keep going. Getting started is everything." Fix: break down the task into the smallest possible first step and take it.
 
-Total bundle value: $30,000+. 27 products total.
+**The Couch-to-5K for AI program.** Free, under 10 minutes a day, builds progressively from chatting with AI to building with it using Claude Code. Updated for 2026 from a 2024 version ("30 Days of GPT") that was featured in Harvard Business Review.
 
-**Note for Post Generation**
-This is a promotional email with no substantive AI industry content. The Notion and Gumloop use cases mentioned (agents in workspace tools, MCP-integrated assistants) are minor data points but not sufficient for a post. The substantive Lenny's issue from April 20 (Intercom 2x'd engineering velocity with Claude Code) remains the relevant cached content for editorial use.
+**Behavior-change design applied.** At WHOOP's Healthspan feature (tracking 9 metrics to calculate "WHOOP Age"), the most effective intervention was the simplest: offer a new bedtime to aim for tonight. At Big Health (digital depression treatment), the failure mode was taking on too large of an action (planning a whole dinner party). The fix: one mood-lifting action per day, broken down to its smallest first step. Applied to AI: the same progressive structure with small daily wins builds confidence and momentum.
+
+**Target audience for the program.** Executives, managers, ICs, technical and non-technical people — anyone who says they want to use AI more seriously but can't find the time. The program goes from "chatting with AI" to "actually building with it" regardless of background.
+
+**Primary content signal:** behavior-change methodology applied to AI adoption, not agentic infrastructure. Relevant for founders and PMs thinking about AI tool adoption curves, less directly relevant to agentic builders. No competitor mentions flagged.
