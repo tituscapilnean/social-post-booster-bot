@@ -10,7 +10,6 @@ This is a **prompt-only repo** — no build system, no tests, no runtime. Everyt
 config/
   style.md        # Voice, structure, tone rules, platform-specific format (LinkedIn + X)
   pillars.md      # 3 communication pillars — every post must hit 1-2
-  competitors.md  # Blocked companies — never feature favorably in a post
 
 newsletter_list.md  # Pre-selected sender addresses — source of the Step 3 Gmail query
 newsletters/
@@ -115,7 +114,7 @@ Delegate this step to a Sonnet subagent. Call the `Agent` tool with `subagent_ty
    - **Same message_id or older date** -> already cached, skip.
    - **Newer date** -> queue for full-content fetch.
 5. Batch-fetch full content for queued senders only via `mcp__civic__google-gmail-get_gmail_messages_content_batch`. On most days this is 0-8 fetches, not 25+.
-6. Rewrite each updated `newsletters/{slug}.md` preserving the file format below. Summaries 200-400 words: concrete data points, quotes, named examples, companies/products/people mentioned, flag competitor mentions (see `config/competitors.md`).
+6. Rewrite each updated `newsletters/{slug}.md` preserving the file format below. Summaries 200-400 words: concrete data points, quotes, named examples, companies/products/people mentioned.
 7. Return a short report: list of files updated, skipped senders with no new issue, any senders that errored.
 
 Do not return full newsletter bodies in the subagent report — the main session will read the updated files directly in Step 4.
@@ -136,7 +135,6 @@ message_id: [id]
 When summarizing newsletter content:
 - Extract concrete data points, quotes, and named examples
 - Note which companies, products, or people are mentioned
-- Flag any competitor mentions (see `config/competitors.md`)
 - Keep summaries to 200-400 words — enough to write a post from without re-fetching
 
 ### Step 4 — Build the content pool
@@ -157,15 +155,12 @@ If Step 3 already updated the cache with today's content, no additional fetches 
 
 If any of the top 6 newsletters have stale cache (older than 24 hours), delegate the refresh to a Sonnet subagent the same way as Step 3 (restricted to the stale slugs) rather than fetching from the main Opus session.
 
-### Step 6 — Filter competitors
-Do NOT build the post around content that primarily promotes Civic competitors.
-Read the competitor list from: `config/competitors.md`
-
-You may still draw from those newsletters for unrelated insights — just don't give those companies a platform.
+### Step 6 — (reserved)
+No competitor filter applies. Skip to Step 7.
 
 ### Step 7 — Confirm topic & search X for topical posts
 
-After reading the newsletters and filtering competitors, propose the main topic/angle to Titus. Include:
+After reading the newsletters, propose the main topic/angle to Titus. Include:
 - The proposed narrative angle (1-2 sentences)
 - Which newsletters are feeding it
 - Which pillar(s) it hits
@@ -190,8 +185,8 @@ Write two platform-specific versions following the style guide in `config/style.
 **Both versions must:**
 - Weave signals from at least 2 newsletters into one narrative
 - Hit 1-2 of the communication pillars in `config/pillars.md`
-- Speak directly to **builders and operators of AI agents** — name the tradeoff, decision, or system design choice they'll actually face
-- Reference at least **2 named tools, models, protocols, or companies from the last 7 days** to prove Titus is tracking the frontier (not recycling generic "AI is changing everything" commentary)
+- Speak directly to **builders, operators, GTM and marketing leaders working at the cutting edge of tech, AI, and AI-native go-to-market** — name the tradeoff, decision, tactic, or system design choice they'll actually face
+- Reference at least **2 named tools, models, protocols, companies, or campaigns from the last 7 days** to prove Titus is tracking the frontier (not recycling generic "AI is changing everything" commentary)
 
 **LinkedIn version:**
 - 200-350 words, single scroll, no threads, no bullet points
@@ -223,10 +218,10 @@ Before saving, score the draft on three dimensions (1-5 each). Be honest — a 3
 - 3 = solid but safe
 - 1 = no tension, no reason to share
 
-**Relevance to Titus's work (1-5):** Does the post reinforce Titus's positioning around his work at Civic (MCP server hub / gateway) and the agentic-economy infrastructure layer? Does it make sense that *this specific person* — who ships agent infra — would write it? Without being a Civic ad, does it adjacent-sell the worldview Civic is built on (MCP, agent routing, gateway patterns, orchestration infra)?
-- 5 = clearly in Titus's professional lane, strengthens inbound signal for Civic-adjacent conversations
-- 3 = on-topic for agent builders but not specifically leveraging Titus's vantage point
-- 1 = off-lane, could be written by any generalist commentator
+**Cutting-edge use case (1-5):** Does the post highlight a concrete, current use case at the frontier of tech, AI, GTM, or marketing? Does it name specific tools/models/tactics being deployed today by builders, operators, growth, or marketing teams — and surface a non-obvious lesson from how that use case actually plays out?
+- 5 = a sharp, current use case (agent infra, AI-native GTM motion, marketing automation, growth experiment) with a named insight a practitioner could act on
+- 3 = on-topic but generic — names the trend without showing the use case
+- 1 = no concrete use case, no named tools, abstract commentary
 
 **Threshold:** If any score is <= 2, revise the post before proceeding. Show all four scores in the output.
 
@@ -245,7 +240,7 @@ File format:
 - Relevance: X/5
 - Hotness: X/5
 - Engagement-worthiness: X/5
-- Relevance to Titus's work: X/5
+- Cutting-edge use case: X/5
 
 ## LinkedIn
 
